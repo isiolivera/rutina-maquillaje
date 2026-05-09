@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base de maquillaje + Uriage — Rutina piel grasa Chile</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f7f4;color:#1a1a18;padding:1.5rem}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
+.tab{padding:7px 14px;font-size:13px;border:0.5px solid #c0bfb8;border-radius:8px;background:transparent;color:#5f5e5a;cursor:pointer;transition:all 0.15s}
+.tab.active{background:#eeedfe;color:#3c3489;border-color:#3c3489;font-weight:500}
+.tab:hover:not(.active){background:#f1efe8}
+.panel{display:none}
+.panel.active{display:block}
+.card{background:#fff;border:0.5px solid #d3d1c7;border-radius:12px;padding:1rem 1.25rem;margin-bottom:0.75rem}
+.card-winner{border:2px solid #1d9e75}
+.card-second{border:2px solid #378add}
+.badge{display:inline-block;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:500;margin-bottom:8px}
+.badge-success{background:#e1f5ee;color:#0f6e56}
+.badge-info{background:#e6f1fb;color:#185fa5}
+.badge-gray{background:#f1efe8;color:#5f5e5a}
+.pheader{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.picon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+.ic-teal{background:#e1f5ee;color:#0f6e56}
+.ic-blue{background:#e6f1fb;color:#185fa5}
+.ic-purple{background:#eeedfe;color:#534ab7}
+.ic-amber{background:#faeeda;color:#854f0b}
+.ic-coral{background:#faece7;color:#993c1d}
+.ic-green{background:#eaf3de;color:#3b6d11}
+.pname{font-size:14px;font-weight:500;color:#1a1a18;line-height:1.3}
+.pbrand{font-size:12px;color:#5f5e5a;margin-top:2px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.tag{padding:2px 8px;border-radius:12px;font-size:11px;font-weight:500}
+.t-teal{background:#e1f5ee;color:#0f6e56}
+.t-blue{background:#e6f1fb;color:#185fa5}
+.t-purple{background:#eeedfe;color:#534ab7}
+.t-amber{background:#faeeda;color:#854f0b}
+.t-coral{background:#faece7;color:#993c1d}
+.t-green{background:#eaf3de;color:#3b6d11}
+.t-gray{background:#f1efe8;color:#5f5e5a}
+.desc{font-size:12px;color:#5f5e5a;line-height:1.65}
+.slabel{font-size:11px;font-weight:500;color:#888780;letter-spacing:0.05em;text-transform:uppercase;margin:1.25rem 0 0.75rem}
+.notebox{background:#f1efe8;border-left:2px solid #b4b2a9;border-radius:0;padding:10px 14px;font-size:12px;color:#5f5e5a;margin-top:0.75rem;line-height:1.7}
+.stack-flow{display:flex;flex-direction:column;gap:4px;margin-top:0.5rem}
+.step{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;background:#f8f7f4;border-radius:8px;font-size:12px;color:#1a1a18}
+.step-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:1px}
+.sn-blue{background:#e6f1fb;color:#185fa5}
+.sn-teal{background:#e1f5ee;color:#0f6e56}
+.sn-purple{background:#eeedfe;color:#534ab7}
+.sn-amber{background:#faeeda;color:#854f0b}
+.sn-coral{background:#faece7;color:#993c1d}
+.sn-green{background:#eaf3de;color:#3b6d11}
+h1{font-size:16px;font-weight:500;margin-bottom:4px}
+p.sub{font-size:13px;color:#5f5e5a;margin-bottom:1.25rem}
+</style>
+</head>
+<body>
+
+<h1>Agua Termal Uriage + Base de Maquillaje</h1>
+<p class="sub">Rutina actualizada — piel grasa acneica · Chile 2025</p>
+
+<div class="tabs">
+  <button class="tab active" onclick="show(0)">Cambio: Uriage</button>
+  <button class="tab" onclick="show(1)">Bases de maquillaje</button>
+  <button class="tab" onclick="show(2)">Primer</button>
+  <button class="tab" onclick="show(3)">Stack completo</button>
+</div>
+
+<!-- TAB 0: URIAGE -->
+<div class="panel active" id="p0">
+  <div class="card card-winner">
+    <span class="badge badge-success">Actualizado — Uriage reemplaza LRP en la rutina</span>
+    <div class="pheader">
+      <div class="picon ic-teal">💧</div>
+      <div>
+        <div class="pname">Eau Thermale d'Uriage — Agua Termal en Spray</div>
+        <div class="pbrand">Salcobrand / Cruz Verde · ~$12.900 · 300 ml</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag t-teal">11.000 mg/L minerales</span>
+      <span class="tag t-teal">La más mineralizada del mercado</span>
+      <span class="tag t-teal">pH neutro</span>
+      <span class="tag t-teal">Efecto filmógeno exclusivo</span>
+    </div>
+    <div class="desc">El agua de Uriage proviene de los Alpes franceses a 422 m de altitud y es objetivamente la más mineralizada de todas las aguas termales disponibles en Chile — 11.000 mg/L de sales minerales frente a los ~200 mg/L de LRP y los ~400 mg/L de Avène. Su efecto filmógeno único forma una película protectora sobre la piel que retiene humedad y bloquea agentes externos. Para piel grasa con tendencia acneica, la combinación de calcio, magnesio, cobre, zinc y silicio cubre todos los frentes: antiinflamatorio, seborregulador y regenerador de barrera simultáneamente.</div>
+  </div>
+
+  <div class="slabel">Por qué Uriage supera a LRP para esta rutina específica</div>
+  <div class="card">
+    <div class="desc" style="line-height:2">
+      <strong style="color:#1a1a18;font-weight:500">LRP (antes):</strong> Fuerte en selenio antioxidante + zinc. Excelente, pero concentración mineral total mucho más baja.<br>
+      <strong style="color:#1a1a18;font-weight:500">Uriage (ahora):</strong> Mismos minerales + calcio + magnesio + silicio + efecto filmógeno exclusivo. Mayor concentración total (55x más mineralizada que LRP). El efecto de película es especialmente útil antes de los activos —mejora la absorción de niacinamida y ácidos, y protege contra el "rebound" de deshidratación post-ácido.<br>
+      <strong style="color:#1a1a18;font-weight:500">Protocolo sin cambios:</strong> Rociar post-limpieza, esperar 30 seg, NO secar. La piel húmeda absorbe mejor la niacinamida y los ácidos que siguen.
+    </div>
+  </div>
+</div>
+
+<!-- TAB 1: BASES -->
+<div class="panel" id="p1">
+  <div class="slabel">Ganadora — base medicada con activos de tratamiento real</div>
+
+  <div class="card card-winner">
+    <span class="badge badge-success">Mejor base para piel acneica disponible en Chile</span>
+    <div class="pheader">
+      <div class="picon ic-purple">⭐</div>
+      <div>
+        <div class="pname">Clinique Anti-Blemish Solutions Liquid Makeup</div>
+        <div class="pbrand">Blush-Bar Chile · ~$38.000 · 30 ml · Oil-free · SPF 15</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag t-purple">Ácido salicílico 0.5%</span>
+      <span class="tag t-purple">Zinc PCA</span>
+      <span class="tag t-purple">Prebióticos Lactobacillus</span>
+      <span class="tag t-purple">Algas rojas + regaliz</span>
+      <span class="tag t-purple">Oil-free</span>
+      <span class="tag t-purple">Sin fragancia</span>
+    </div>
+    <div class="desc" style="margin-bottom:10px">La única base en Chile que no solo cubre imperfecciones, sino que las trata activamente mientras la usas. El ácido salicílico 0.5% desobstruye poros durante las horas de uso. El zinc PCA regula sebo en tiempo real. Los prebióticos de Lactobacillus protegen el microbioma cutáneo. El regaliz y la cafeína calman enrojecimiento post-imperfección. Tests clínicos: poros visiblemente menos obstruidos en piel desnuda tras 10 días de uso. Cobertura moderada-alta, acabado mate natural, resistente al agua y al sudor. No comedogénica, sin fragancia, probada dermatológicamente.<br><br>
+    Compatibilidad con la rutina: el SA 0.5% complementa (no interfiere) el COSRX BHA nocturno. El zinc PCA actúa en sinergia con la niacinamida 10% AM.</div>
+  </div>
+
+  <div class="slabel">Segunda opción — cobertura dermatológica máxima</div>
+
+  <div class="card card-second">
+    <span class="badge badge-info">Segunda opción — cicatrices y marcas severas</span>
+    <div class="pheader">
+      <div class="picon ic-blue">🛡</div>
+      <div>
+        <div class="pname">Vichy Dermablend 3D Correction</div>
+        <div class="pbrand">Salcobrand / Cruz Verde · ~$29.000 · 30 ml · SPF 25 · Oil-free</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag t-blue">Ácido salicílico</span>
+      <span class="tag t-blue">Tecnología Alliagel</span>
+      <span class="tag t-blue">Cobertura 16 horas</span>
+      <span class="tag t-blue">SPF 25</span>
+      <span class="tag t-blue">Reduce marcas en -49%</span>
+    </div>
+    <div class="desc">La base dermatológica de mayor cobertura disponible en farmacia chilena. Reduce apariencia de imperfecciones en un 49% tras 4 semanas. Textura mousse que se funde al contacto — no se siente pesada pese a la altísima cobertura. Elige esta si las cicatrices y marcas residuales son la prioridad número uno; elige Clinique si el tratamiento del acné activo es la prioridad.</div>
+  </div>
+
+  <div class="slabel">Tercera opción — mayor gama de tonos disponible</div>
+
+  <div class="card">
+    <span class="badge badge-gray">Tercera opción</span>
+    <div class="pheader">
+      <div class="picon ic-amber">🎨</div>
+      <div>
+        <div class="pname">MAC Studio Fix Fluid SPF 15</div>
+        <div class="pbrand">Falabella / MAC Chile · ~$38.000 · 30 ml · 60+ tonos</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag t-amber">Cobertura construible</span>
+      <span class="tag t-amber">Acabado mate-satinado</span>
+      <span class="tag t-amber">60+ tonos</span>
+      <span class="tag t-amber">Oil-free</span>
+    </div>
+    <div class="desc">La base preferida por maquilladores profesionales para pieles grasas. Sin activos de tratamiento, pero formulación oil-free impecable y la gama de tonos más amplia en Chile. Queda tercera porque para piel acneica, elegir sin activos de tratamiento es una oportunidad perdida si existe la opción Clinique.</div>
+  </div>
+</div>
+
+<!-- TAB 2: PRIMER -->
+<div class="panel" id="p2">
+  <div class="slabel">¿Es necesario el primer con esta rutina?</div>
+  <div class="card">
+    <div class="desc">Con el Effaclar Mat ya en la rutina AM, la piel llega al maquillaje con una base aterciopelada que actúa como primer natural. Sin embargo, para poros muy dilatados, un primer específico entre el Effaclar Mat y la base añade 2–4 horas extra de duración y reduce visibilidad de poros. Paso opcional pero de alto impacto visible.</div>
+  </div>
+
+  <div class="slabel">Primer recomendado</div>
+  <div class="card card-winner">
+    <span class="badge badge-success">Primer recomendado — doble función</span>
+    <div class="pheader">
+      <div class="picon ic-coral">✨</div>
+      <div>
+        <div class="pname">MAC Prep + Prime Fix+ Mattifying Mist</div>
+        <div class="pbrand">Falabella / MAC Chile · ~$34.990 · Spray primer + fijador</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag t-coral">Vitamina C + E</span>
+      <span class="tag t-coral">Cafeína calmante</span>
+      <span class="tag t-coral">Matifica sin tapar poros</span>
+      <span class="tag t-coral">Primer + setting spray</span>
+    </div>
+    <div class="desc">Doble función: prepara (como primer) y fija (como setting spray). Para piel muy grasa es ideal en spray — no hay que tocar la piel con los dedos, reduciendo el riesgo de transferencia bacteriana. La cafeína calma inflamación leve post-acné. Usar antes de la base (primer) y después de la base (fijador).</div>
+  </div>
+
+  <div class="card card-second">
+    <span class="badge badge-info">Alternativa — poros muy marcados</span>
+    <div class="pheader">
+      <div class="picon ic-teal">⭕</div>
+      <div>
+        <div class="pname">NYX Pore Filler Primer</div>
+        <div class="pbrand">DBS / Falabella · ~$12.990 · Gel transparente</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag t-teal">Rellena poros visualmente</span>
+      <span class="tag t-teal">Sin aceites</span>
+      <span class="tag t-teal">Textura sedosa</span>
+    </div>
+    <div class="desc">Si la prioridad número uno son los poros visibles, este primer en gel los "rellena" visualmente antes de la base. Aplicar solo en zona T y poros más marcados — no en todo el rostro para evitar que la base se deslice.</div>
+  </div>
+</div>
+
+<!-- TAB 3: STACK -->
+<div class="panel" id="p3">
+  <div class="slabel">Stack completo de maquillaje — orden de aplicación AM</div>
+  <div class="stack-flow">
+    <div class="step">
+      <div class="step-num sn-blue">1</div>
+      <div><strong style="font-weight:500">Rutina skincare AM completa</strong> — limpiador → Uriage → niacinamida → Effaclar Mat → Anthelios UVMune 400</div>
+    </div>
+    <div class="step">
+      <div class="step-num sn-teal">2</div>
+      <div><strong style="font-weight:500">Esperar 3–5 minutos</strong> — que el solar se absorba completamente. Si aplicas base sobre solar húmedo, se desplaza y la cobertura se pierde.</div>
+    </div>
+    <div class="step">
+      <div class="step-num sn-purple">3</div>
+      <div><strong style="font-weight:500">NYX Pore Filler (opcional)</strong> — solo en zona T y poros más marcados. Esperar 1 min que seque antes de la base.</div>
+    </div>
+    <div class="step">
+      <div class="step-num sn-amber">4</div>
+      <div><strong style="font-weight:500">Clinique Anti-Blemish Solutions</strong> — aplicar con brocha plana o beauty blender húmedo. Construir cobertura por capas en zonas con imperfecciones activas.</div>
+    </div>
+    <div class="step">
+      <div class="step-num sn-coral">5</div>
+      <div><strong style="font-weight:500">Corrector puntual (si es necesario)</strong> — solo sobre granos activos o marcas muy oscuras. Aplicar sobre la base, no debajo.</div>
+    </div>
+    <div class="step">
+      <div class="step-num sn-green">6</div>
+      <div><strong style="font-weight:500">Polvos traslúcidos sueltos (opcional)</strong> — solo en zona T con kabuki. No bancear todo el rostro — la base Clinique ya tiene acabado mate natural.</div>
+    </div>
+    <div class="step">
+      <div class="step-num sn-blue">7</div>
+      <div><strong style="font-weight:500">MAC Fix+ Mattifying Mist</strong> — cerrar a 30 cm. Funde todo y da aspecto de "piel real". Reactívarlo al mediodía si hay brillo.</div>
+    </div>
+  </div>
+
+  <div class="notebox" style="margin-top:1rem">
+    <strong style="color:#1a1a18;font-weight:500">Regla de oro para piel acneica:</strong> nunca distribuir la base con los dedos — las bacterias de las manos son el principal factor de brotes inducidos por maquillaje. Beauty blender húmedo o brocha limpia siempre. Lavar brochas cada 7 días con jabón neutro o el mismo Effaclar Gel.
+  </div>
+  <div class="notebox" style="margin-top:0.75rem">
+    <strong style="color:#1a1a18;font-weight:500">Desmaquillado — paso crítico:</strong> Con base medicada tipo Clinique, el desmaquillado debe ser doble. Protocolo: agua micelar primero → segundo paso con limpiador habitual (Effaclar o Normaderm). Sin este doble paso, los pigmentos + SA residuales acumulados de noche pueden irritar durante el ciclo nocturno de ácidos.
+  </div>
+</div>
+
+<script>
+function show(i){
+  document.querySelectorAll('.panel').forEach((p,idx)=>p.classList.toggle('active',idx===i));
+  document.querySelectorAll('.tab').forEach((t,idx)=>t.classList.toggle('active',idx===i));
+}
+</script>
+</body>
+</html>
