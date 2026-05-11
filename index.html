@@ -3,169 +3,489 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rutina Final — Piel Grasa Acneica</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Rutina Final — Piel Grasa</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #ffffff;
-  --bg2: #f9f8f6;
-  --bg3: #f2f0ec;
-  --border: #e8e4de;
-  --border2: #d4cfc7;
-  --text: #1a1916;
-  --text2: #6b6760;
-  --text3: #a8a49e;
-  --sage: #4a7c59;
-  --sage-bg: #f0f5f1;
-  --sage-border: #c2d9c9;
-  --sage-mid: #ddeee3;
-  --indigo: #4a5ab0;
-  --indigo-bg: #f0f1fa;
-  --indigo-border: #c2c8e8;
-  --amber: #8a6320;
-  --amber-bg: #fdf6e8;
-  --amber-border: #e8d5a0;
-  --rose: #9e4a4a;
-  --rose-bg: #fdf0f0;
-  --rose-border: #e8c2c2;
-  --slate: #4a6070;
-  --slate-bg: #f0f4f6;
-  --slate-border: #c2d4de;
-  --teal: #3a7a72;
-  --teal-bg: #edf6f5;
-  --teal-border: #b8dbd8;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --radius-pill: 100px;
+  --bg:        #fafaf8;
+  --surface:   #ffffff;
+  --surface2:  #f4f3ef;
+  --border:    #e6e2da;
+  --border2:   #d0cbc0;
+  --text:      #1c1b18;
+  --text2:     #6a6760;
+  --text3:     #aaa89f;
+
+  --sage:      #4d7b5e;
+  --sage-lt:   #eef4f0;
+  --sage-md:   #d4e8db;
+  --sage-brd:  #b8d4c2;
+
+  --indigo:    #4855a8;
+  --indigo-lt: #eef0fa;
+  --indigo-md: #d0d5f0;
+  --indigo-brd:#b0b8e4;
+
+  --amber:     #8a6418;
+  --amber-lt:  #fdf5e4;
+  --amber-brd: #e0c878;
+
+  --rose:      #9c4848;
+  --rose-lt:   #fdf0f0;
+  --rose-brd:  #e0b8b8;
+
+  --slate:     #4a6070;
+  --slate-lt:  #eef3f6;
+  --slate-brd: #b8cdd8;
+
+  --teal:      #3a7872;
+  --teal-lt:   #edf5f4;
+  --teal-md:   #c8e4e0;
+  --teal-brd:  #a0ccc8;
+
+  --r:    10px;
+  --r-sm: 6px;
+  --pill: 999px;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Geist', -apple-system, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; min-height: 100vh; }
-.page { max-width: 760px; margin: 0 auto; padding: 3rem 1.75rem 5rem; }
 
-.header { margin-bottom: 3rem; }
-.header-top { display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem; }
-.badge { display: inline-flex; align-items: center; gap: 5px; background: var(--sage-bg); border: 1px solid var(--sage-border); border-radius: var(--radius-pill); padding: 4px 12px; font-size: 11px; font-weight: 500; color: var(--sage); }
-.badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
-h1 { font-family: 'Instrument Serif', serif; font-size: 42px; font-weight: 400; line-height: 1.05; color: var(--text); letter-spacing: -0.02em; margin-bottom: 1rem; }
+html { font-size: 14px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── PAGE ── */
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+
+/* ── HEADER ── */
+.header { margin-bottom: 2.5rem; }
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--sage-lt);
+  border: 1px solid var(--sage-brd);
+  border-radius: var(--pill);
+  padding: 4px 13px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--sage);
+  letter-spacing: 0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.header-badge-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
 h1 em { font-style: italic; color: var(--sage); }
-.header-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-.hpill { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 3px 11px; font-size: 11px; color: var(--text2); }
 
-.tabs { display: flex; margin-bottom: 2.5rem; border-bottom: 1.5px solid var(--border); }
-.tab { padding: 9px 18px; font-size: 13px; font-family: 'Geist', sans-serif; border: none; background: transparent; color: var(--text3); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1.5px; transition: all 0.18s; font-weight: 400; }
+.header-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.htag {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--pill);
+  padding: 3px 11px;
+  font-size: 11px;
+  color: var(--text2);
+}
+
+/* ── TABS ── */
+.tabs {
+  display: flex;
+  border-bottom: 1.5px solid var(--border);
+  margin-bottom: 2.5rem;
+  gap: 0;
+}
+
+.tab {
+  padding: 9px 20px;
+  font-size: 12.5px;
+  font-family: 'DM Sans', sans-serif;
+  border: none;
+  background: transparent;
+  color: var(--text3);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1.5px;
+  transition: color .18s;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
 .tab.on { color: var(--text); border-bottom-color: var(--text); font-weight: 500; }
 .tab:hover:not(.on) { color: var(--text2); }
+
 .panel { display: none; }
 .panel.on { display: block; }
 
+/* ── DAY NAV ── */
 .day-nav { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 2rem; }
-.dbtn { padding: 6px 16px; font-size: 12px; font-family: 'Geist', sans-serif; border: 1.5px solid var(--border); border-radius: var(--radius-pill); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.15s; }
-.dbtn.on { background: var(--text); color: white; border-color: var(--text); }
-.dbtn:hover:not(.on) { color: var(--text); border-color: var(--border2); }
+
+.dbtn {
+  padding: 5px 16px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  border: 1.5px solid var(--border2);
+  border-radius: var(--pill);
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.dbtn.on { background: var(--text); color: #fff; border-color: var(--text); }
+.dbtn:hover:not(.on) { border-color: var(--text); color: var(--text); }
+
 .dcontent { display: none; }
 .dcontent.on { display: block; }
 
+/* ── SESSION ── */
 .session { margin-bottom: 2rem; }
-.sess-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-.spill { padding: 4px 14px; border-radius: var(--radius-pill); font-size: 10.5px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
-.spill-am   { background: var(--sage-bg);   color: var(--sage);   border: 1px solid var(--sage-border); }
-.spill-pm   { background: var(--indigo-bg); color: var(--indigo); border: 1px solid var(--indigo-border); }
-.spill-rest { background: var(--slate-bg);  color: var(--slate);  border: 1px solid var(--slate-border); }
-.ssub { font-size: 12px; color: var(--text3); }
 
-.steps { border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--bg); }
-.step { display: grid; grid-template-columns: 44px 1fr; align-items: start; padding: 13px 16px; border-bottom: 1px solid var(--border); transition: background 0.12s; }
+.sess-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.spill {
+  padding: 4px 14px;
+  border-radius: var(--pill);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.spill-am   { background: var(--sage-lt);  color: var(--sage);   border: 1px solid var(--sage-brd); }
+.spill-pm   { background: var(--indigo-lt);color: var(--indigo); border: 1px solid var(--indigo-brd); }
+.spill-rest { background: var(--slate-lt); color: var(--slate);  border: 1px solid var(--slate-brd); }
+
+.ssub { font-size: 11.5px; color: var(--text3); }
+
+/* ── STEPS TABLE ── */
+.steps {
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+/* Column headers */
+.steps-header {
+  display: grid;
+  grid-template-columns: 36px 1fr 140px;
+  background: var(--surface2);
+  border-bottom: 1.5px solid var(--border);
+  padding: 7px 16px;
+  gap: 12px;
+}
+
+.col-label {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+
+.col-label.utility { color: var(--sage); }
+
+.step {
+  display: grid;
+  grid-template-columns: 36px 1fr 140px;
+  align-items: start;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+  transition: background .12s;
+}
+
 .step:last-child { border-bottom: none; }
-.step:hover { background: var(--bg2); }
-.step-new { background: var(--teal-bg); }
-.step-new:hover { background: #e0f0ee; }
+.step:hover { background: var(--bg); }
+.step-new { background: var(--teal-lt); }
+.step-new:hover { background: #e4f2f0; }
 
-.num { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
-.num-am   { background: var(--sage-mid);  color: var(--sage); }
-.num-pm   { background: var(--indigo-bg); color: var(--indigo); border: 1px solid var(--indigo-border); }
-.num-rest { background: var(--slate-bg);  color: var(--slate);  border: 1px solid var(--slate-border); }
-.num-new  { background: var(--teal-bg);   color: var(--teal);   border: 1px solid var(--teal-border); }
+/* number circle */
+.num {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 500;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 
-.sname { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+.num-am   { background: var(--sage-md);   color: var(--sage); }
+.num-pm   { background: var(--indigo-md); color: var(--indigo); }
+.num-rest { background: var(--slate-lt);  color: var(--slate); border: 1px solid var(--slate-brd); }
+.num-new  { background: var(--teal-md);   color: var(--teal); }
+
+/* step content */
+.step-main {}
+.sname { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 1px; }
 .sprod { font-size: 12px; color: var(--text2); margin-bottom: 3px; }
 .snote { font-size: 11px; color: var(--text3); line-height: 1.5; }
-.new-badge { display: inline-block; background: var(--teal-bg); color: var(--teal); border: 1px solid var(--teal-border); border-radius: var(--radius-pill); font-size: 9px; font-weight: 500; padding: 1px 8px; margin-left: 6px; letter-spacing: 0.04em; vertical-align: middle; }
 
-.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
-.tag { padding: 2px 9px; border-radius: var(--radius-pill); font-size: 10px; font-weight: 500; border: 1px solid; }
-.tag-sage   { background: var(--sage-bg);   color: var(--sage);   border-color: var(--sage-border); }
-.tag-indigo { background: var(--indigo-bg); color: var(--indigo); border-color: var(--indigo-border); }
-.tag-amber  { background: var(--amber-bg);  color: var(--amber);  border-color: var(--amber-border); }
-.tag-rose   { background: var(--rose-bg);   color: var(--rose);   border-color: var(--rose-border); }
-.tag-teal   { background: var(--teal-bg);   color: var(--teal);   border-color: var(--teal-border); }
+.new-badge {
+  display: inline-block;
+  background: var(--teal-lt);
+  color: var(--teal);
+  border: 1px solid var(--teal-brd);
+  border-radius: var(--pill);
+  font-size: 8.5px;
+  font-weight: 500;
+  padding: 1px 7px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.04em;
+}
+
+/* utility column */
+.step-utility {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.5;
+  padding-top: 2px;
+  border-left: 2px solid var(--border);
+  padding-left: 12px;
+}
+
+.step-utility em {
+  display: block;
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.util-sage   em { color: var(--sage); }
+.util-indigo em { color: var(--indigo); }
+.util-amber  em { color: var(--amber); }
+.util-rose   em { color: var(--rose); }
+.util-slate  em { color: var(--slate); }
+.util-teal   em { color: var(--teal); }
+
+/* tags */
+.tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 5px; }
+.tag {
+  padding: 1px 8px;
+  border-radius: var(--pill);
+  font-size: 9.5px;
+  font-weight: 500;
+  border: 1px solid;
+}
+.tag-sage   { background: var(--sage-lt);   color: var(--sage);   border-color: var(--sage-brd); }
+.tag-indigo { background: var(--indigo-lt); color: var(--indigo); border-color: var(--indigo-brd); }
+.tag-amber  { background: var(--amber-lt);  color: var(--amber);  border-color: var(--amber-brd); }
+.tag-rose   { background: var(--rose-lt);   color: var(--rose);   border-color: var(--rose-brd); }
+.tag-slate  { background: var(--slate-lt);  color: var(--slate);  border-color: var(--slate-brd); }
+.tag-teal   { background: var(--teal-lt);   color: var(--teal);   border-color: var(--teal-brd); }
 
 .divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 
-.callout { background: var(--bg2); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; font-size: 12.5px; color: var(--text2); line-height: 1.7; margin-top: 10px; }
+/* ── CALLOUTS ── */
+.callout {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 13px 16px;
+  font-size: 12.5px;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-top: 10px;
+}
 .callout b { color: var(--text); font-weight: 500; }
-.callout-green { background: var(--sage-bg); border-color: var(--sage-border); color: #3d6b4d; }
-.callout-green b { color: var(--sage); }
-.callout-teal { background: var(--teal-bg); border-color: var(--teal-border); color: #2d6560; }
+.callout-sage  { background: var(--sage-lt);  border-color: var(--sage-brd);  color: #3a6048; }
+.callout-sage b { color: var(--sage); }
+.callout-teal  { background: var(--teal-lt);  border-color: var(--teal-brd);  color: #2c6560; }
 .callout-teal b { color: var(--teal); }
-.callout-slate { background: var(--slate-bg); border-color: var(--slate-border); color: #3d5566; }
+.callout-slate { background: var(--slate-lt); border-color: var(--slate-brd); color: #3a5060; }
 .callout-slate b { color: var(--slate); }
-.alert { background: var(--rose-bg); border: 1.5px solid var(--rose-border); border-radius: var(--radius); padding: 14px 16px; font-size: 12.5px; color: var(--rose); line-height: 1.7; margin-top: 10px; }
+.alert {
+  background: var(--rose-lt);
+  border: 1.5px solid var(--rose-brd);
+  border-radius: var(--r);
+  padding: 13px 16px;
+  font-size: 12.5px;
+  color: var(--rose);
+  line-height: 1.7;
+  margin-top: 10px;
+}
 .alert b { color: var(--rose); font-weight: 500; }
 
-.wgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin-top: 12px; }
-.wday { border: 1.5px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; background: var(--bg); }
-.wdh { background: var(--text); color: white; text-align: center; padding: 6px 2px; font-size: 9px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; }
+/* ── WEEKLY GRID ── */
+.wgrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.wday {
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.wdh {
+  background: var(--text);
+  color: #fff;
+  text-align: center;
+  padding: 6px 2px;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
 .wdb { padding: 6px 5px; display: flex; flex-direction: column; gap: 3px; }
-.wt { border-radius: 4px; padding: 2px 4px; font-size: 8.5px; line-height: 1.4; font-weight: 500; }
-.wt-am   { background: var(--sage-bg);   color: var(--sage); }
-.wt-pm   { background: var(--indigo-bg); color: var(--indigo); }
-.wt-rest { background: var(--slate-bg);  color: var(--slate); }
-.wt-new  { background: var(--teal-bg);   color: var(--teal); }
+
+.wt {
+  border-radius: 3px;
+  padding: 2px 4px;
+  font-size: 8.5px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.wt-am   { background: var(--sage-lt);   color: var(--sage); }
+.wt-pm   { background: var(--indigo-lt); color: var(--indigo); }
+.wt-rest { background: var(--slate-lt);  color: var(--slate); }
+.wt-new  { background: var(--teal-lt);   color: var(--teal); }
+
 .wlegend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-.wleg-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text2); }
+.wleg { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text2); }
 .wleg-dot { width: 8px; height: 8px; border-radius: 3px; }
 .wleg-dot.am   { background: var(--sage); }
+.wleg-dot.new  { background: var(--teal); }
 .wleg-dot.pm   { background: var(--indigo); }
 .wleg-dot.rest { background: var(--slate); }
-.wleg-dot.new  { background: var(--teal); }
 
-.pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 8px; }
-.pcard { background: var(--bg2); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 13px 15px; transition: border-color 0.15s, background 0.15s; }
-.pcard:hover { border-color: var(--border2); background: var(--bg3); }
-.pcard-accent { border-color: var(--amber-border); background: var(--amber-bg); }
-.pcard-accent .pcat { color: var(--amber); }
-.pcard-new { border-color: var(--teal-border); background: var(--teal-bg); }
-.pcard-new .pcat { color: var(--teal); }
+/* ── PRODUCTS ── */
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+
+.pcard {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 13px 15px;
+  transition: border-color .15s, background .15s;
+}
+
+.pcard:hover { border-color: var(--border2); background: var(--bg); }
+.pcard-amber { border-color: var(--amber-brd); background: var(--amber-lt); }
+.pcard-amber .pcat { color: var(--amber); }
+.pcard-teal  { border-color: var(--teal-brd);  background: var(--teal-lt); }
+.pcard-teal  .pcat { color: var(--teal); }
+
 .pcat { font-size: 9.5px; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--text3); margin-bottom: 5px; }
-.pname { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; line-height: 1.35; }
-.pbrand { font-size: 11px; color: var(--text3); }
+.pname { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; line-height: 1.3; }
+.pbrand { font-size: 11px; color: var(--text3); margin-bottom: 5px; }
+.putil { font-size: 11px; color: var(--text2); line-height: 1.5; border-top: 1px solid var(--border); margin-top: 7px; padding-top: 7px; }
+.putil b { font-weight: 500; color: var(--text); }
 
-.slabel { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); font-weight: 500; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+/* ── SECTION LABEL ── */
+.slabel {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-weight: 500;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .slabel::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-.intro-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; margin-top: 12px; }
-.intro-card { background: var(--bg2); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 14px 15px; }
-.iw-num { font-family: 'Instrument Serif', serif; font-size: 26px; font-weight: 400; color: var(--sage); line-height: 1; margin-bottom: 6px; }
+/* ── INTRO GRID ── */
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.intro-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px 15px;
+}
+
+.iw-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--sage);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
 .iw-title { font-size: 12px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
-.iw-desc { font-size: 11px; color: var(--text2); line-height: 1.55; }
+.iw-desc  { font-size: 11px; color: var(--text2); line-height: 1.55; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .steps-header { grid-template-columns: 32px 1fr; }
+  .steps-header .col-label.utility { display: none; }
+  .step { grid-template-columns: 32px 1fr; }
+  .step-utility { display: none; }
+  h1 { font-size: 28px; }
+  .wgrid { grid-template-columns: repeat(4, 1fr); }
+  .tab { padding: 8px 12px; font-size: 11.5px; }
+}
 </style>
 </head>
 <body>
 <div class="page">
 
+  <!-- HEADER -->
   <div class="header">
-    <div class="header-top">
-      <div class="badge"><div class="badge-dot"></div>Dermocosmética · Piel grasa · Chile 2025</div>
-    </div>
+    <div class="header-badge"><div class="header-badge-dot"></div>Dermocosmética clínica · Piel grasa · Chile 2025</div>
     <h1>Rutina <em>final</em><br>oficial</h1>
-    <div class="header-pills">
-      <span class="hpill">Piel grasa</span>
-      <span class="hpill">Poros dilatados</span>
-      <span class="hpill">Tendencia acneica</span>
-      <span class="hpill">Barrera alterada</span>
+    <div class="header-tags">
+      <span class="htag">Piel grasa</span>
+      <span class="htag">Poros dilatados</span>
+      <span class="htag">Tendencia acneica</span>
+      <span class="htag">Barrera alterada</span>
     </div>
   </div>
 
+  <!-- TABS -->
   <div class="tabs">
     <button class="tab on" onclick="showTab('daily',this)">Rutina diaria</button>
     <button class="tab" onclick="showTab('weekly',this)">Calendario</button>
@@ -173,7 +493,9 @@ h1 em { font-style: italic; color: var(--sage); }
     <button class="tab" onclick="showTab('rules',this)">Reglas clave</button>
   </div>
 
-  <!-- ════════════ DAILY ════════════ -->
+  <!-- ══════════════════════════════════════
+       DAILY
+  ══════════════════════════════════════ -->
   <div class="panel on" id="t-daily">
     <div class="day-nav">
       <button class="dbtn on" onclick="showDay('lun',this)">Lun</button>
@@ -185,192 +507,315 @@ h1 em { font-style: italic; color: var(--sage); }
       <button class="dbtn" onclick="showDay('dom',this)">Dom</button>
     </div>
 
-    <!-- LUN — Effaclar AM → Probio-BHA sérum -->
+    <!-- ── LUN ── -->
     <div class="dcontent on" id="d-lun">
       <div class="session">
         <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Limpiador A · Probio-BHA · protección</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-am">1</div><div><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div><div class="snote">Phylobioma + Zinc PCA. Masajear 60 seg, aclarar con agua fría.</div></div></div>
-          <div class="step"><div class="num num-am">2</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div><div class="snote">Rociar a 20 cm, esperar 30 seg, NO secar ni abanicar.</div></div></div>
-          <div class="step step-new"><div class="num num-new">3</div><div><div class="sname">Sérum activo <span class="new-badge">NUEVO</span></div><div class="sprod">Vichy Normaderm Probio-BHA</div><div class="snote">BHA + niacinamida + probióticos. Reemplaza la niacinamida TO los días de Effaclar AM.</div><div class="tags"><span class="tag tag-teal">BHA suave</span><span class="tag tag-teal">Poros</span><span class="tag tag-teal">Probióticos</span></div></div></div>
-          <div class="step"><div class="num num-am">4</div><div><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div><div class="snote">Sella activos. Efecto mate 8h.</div></div></div>
-          <div class="step"><div class="num num-am">5</div><div><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 Oil Control SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div></div>
-          <div class="step"><div class="num num-am">6</div><div><div class="sname">Base de maquillaje (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions Liquid Makeup</div><div class="snote">Beauty blender húmedo o brocha. Nunca con los dedos.</div></div></div>
+          <div class="steps-header">
+            <div></div>
+            <div class="col-label">Producto</div>
+            <div class="col-label utility">¿Para qué sirve?</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">1</div>
+            <div class="step-main">
+              <div class="sname">Limpieza</div>
+              <div class="sprod">LRP Effaclar Gel+M</div>
+              <div class="snote">Masajear 60 seg, aclarar con agua fría.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Limpieza</em>Elimina sebo, bacterias y residuos sin alterar el microbioma.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">2</div>
+            <div class="step-main">
+              <div class="sname">Agua termal</div>
+              <div class="sprod">Uriage Eau Thermale</div>
+              <div class="snote">Rociar a 20 cm, esperar 30 seg, NO secar.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Preparación</em>Mineraliza y prepara la piel para absorber mejor el siguiente activo.</div>
+          </div>
+          <div class="step step-new">
+            <div class="num num-new">3</div>
+            <div class="step-main">
+              <div class="sname">Sérum AM <span class="new-badge">NUEVO</span></div>
+              <div class="sprod">Vichy Normaderm Probio-BHA</div>
+              <div class="snote">Solo días de Effaclar AM (lun, mié, vie, dom).</div>
+              <div class="tags"><span class="tag tag-teal">BHA suave</span><span class="tag tag-teal">Probióticos</span></div>
+            </div>
+            <div class="step-utility util-teal"><em>Poros + microbioma</em>BHA cosmético desbloquea poros durante el día. Probióticos equilibran el microbioma cutáneo.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">4</div>
+            <div class="step-main">
+              <div class="sname">Hidratante matificante</div>
+              <div class="sprod">LRP Effaclar Mat</div>
+              <div class="snote">Sella activos. Efecto mate hasta 8h.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Hidratación + control sebo</em>Hidrata sin engrasar. Sin él la piel produce más sebo para compensar.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">5</div>
+            <div class="step-main">
+              <div class="sname">Protección solar</div>
+              <div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div>
+              <div class="snote">Obligatorio. Esperar 3-5 min antes de maquillar.</div>
+              <div class="tags"><span class="tag tag-amber">Último paso AM</span></div>
+            </div>
+            <div class="step-utility util-amber"><em>Protección esencial</em>Bloquea UVA ultra-larga que agrava el acné y las manchas post-inflamatorias.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">6</div>
+            <div class="step-main">
+              <div class="sname">Base de maquillaje (opcional)</div>
+              <div class="sprod">Clinique Anti-Blemish Solutions</div>
+              <div class="snote">Beauty blender húmedo o brocha. Nunca con los dedos.</div>
+              <div class="tags"><span class="tag tag-sage">SA 0.5%</span><span class="tag tag-sage">Zinc PCA</span></div>
+            </div>
+            <div class="step-utility util-sage"><em>Cobertura activa</em>Cubre y trata al mismo tiempo. SA ayuda a desobstruir poros durante el día.</div>
+          </div>
         </div>
       </div>
+
       <hr class="divider">
+
       <div class="session">
         <div class="sess-head"><span class="spill spill-pm">PM — Noche</span><span class="ssub">Limpiador B · AHA · hidratación reparadora</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-pm">1</div><div><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div></div>
-          <div class="step"><div class="num num-pm">2</div><div><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div></div></div>
-          <div class="step"><div class="num num-pm">3</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div><div class="snote">Rociar, 30 seg, no secar.</div></div></div>
-          <div class="step"><div class="num num-pm">4</div><div><div class="sname">Activo — AHA</div><div class="sprod">The Ordinary Glycolic Acid 7% Toner</div><div class="snote">Con algodón. Esperar 5 min antes del siguiente paso.</div><div class="tags"><span class="tag tag-indigo">Exfolia superficie</span><span class="tag tag-indigo">Luminosidad</span></div></div></div>
-          <div class="step"><div class="num num-pm">5</div><div><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div><div class="snote">Calma reactividad post-AHA.</div></div></div>
-          <div class="step"><div class="num num-pm">6</div><div><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div></div></div>
+          <div class="steps-header">
+            <div></div>
+            <div class="col-label">Producto</div>
+            <div class="col-label utility">¿Para qué sirve?</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">1</div>
+            <div class="step-main">
+              <div class="sname">Desmaquillado (si aplica)</div>
+              <div class="sprod">Agua micelar oil-free → aclarar</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Pre-limpieza</em>Retira maquillaje y protector para que el limpiador trabaje sobre piel limpia.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">2</div>
+            <div class="step-main">
+              <div class="sname">Limpieza</div>
+              <div class="sprod">Vichy Normaderm Phytosolution</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Limpieza + probióticos</em>Probióticos distintos al Effaclar. Alterna para estimular el microbioma de forma diferente.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">3</div>
+            <div class="step-main">
+              <div class="sname">Agua termal</div>
+              <div class="sprod">Uriage Eau Thermale</div>
+              <div class="snote">Rociar, 30 seg, no secar.</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Preparación</em>Crea base mineral para que el AHA penetre de manera uniforme.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">4</div>
+            <div class="step-main">
+              <div class="sname">Activo — AHA</div>
+              <div class="sprod">The Ordinary Glycolic Acid 7%</div>
+              <div class="snote">Con algodón. Esperar 5 min antes del siguiente paso.</div>
+              <div class="tags"><span class="tag tag-indigo">Exfolia superficie</span><span class="tag tag-indigo">Luminosidad</span></div>
+            </div>
+            <div class="step-utility util-indigo"><em>Exfoliación superficial</em>Desprende células muertas, mejora textura y evita que los poros se obstruyan desde afuera.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">5</div>
+            <div class="step-main">
+              <div class="sname">Sérum activo</div>
+              <div class="sprod">The Ordinary Niacinamide 10% + Zinc</div>
+              <div class="snote">Calma reactividad post-AHA.</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Estabilizador</em>Niacinamida calma la inflamación que puede dejar el ácido y regula el sebo.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">6</div>
+            <div class="step-main">
+              <div class="sname">Hidratante nocturno</div>
+              <div class="sprod">The Ordinary NMF + HA</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Reparación de barrera</em>Repone los factores de hidratación natural que el AHA puede haber reducido. Va siempre.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- MAR — Normaderm AM → sin Probio-BHA -->
+    <!-- ── MAR ── -->
     <div class="dcontent" id="d-mar">
       <div class="session">
         <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Limpiador B · niacinamida · protección</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-am">1</div><div><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div><div class="snote">Hoy Normaderm AM — no usar el Probio-BHA para no acumular demasiado Normaderm en una sesión.</div></div></div>
-          <div class="step"><div class="num num-am">2</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step"><div class="num num-am">3</div><div><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div><div class="snote">Hoy vuelve la niacinamida TO — el limpiador ya es Normaderm.</div></div></div>
-          <div class="step"><div class="num num-am">4</div><div><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div></div>
-          <div class="step"><div class="num num-am">5</div><div><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div></div>
-          <div class="step"><div class="num num-am">6</div><div><div class="sname">Base de maquillaje (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-am">1</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div><div class="snote">Hoy Normaderm AM — omitir el Probio-BHA serum.</div></div><div class="step-utility util-sage"><em>Limpieza</em>Alterna con Effaclar. Hoy el limpiador ya aporta probióticos activos.</div></div>
+          <div class="step"><div class="num num-am">2</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-sage"><em>Preparación</em>Mineraliza y mejora la absorción del sérum.</div></div>
+          <div class="step"><div class="num num-am">3</div><div class="step-main"><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc</div></div><div class="step-utility util-sage"><em>Control sebo + poros</em>Regula producción de sebo y reduce visibilidad de poros durante el día.</div></div>
+          <div class="step"><div class="num num-am">4</div><div class="step-main"><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div><div class="step-utility util-sage"><em>Hidratación + mate</em>Sella activos y mantiene acabado mate hasta 8h.</div></div>
+          <div class="step"><div class="num num-am">5</div><div class="step-main"><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div><div class="step-utility util-amber"><em>Protección esencial</em>Bloquea UVA ultra-larga. Paso más importante de la rutina AM.</div></div>
+          <div class="step"><div class="num num-am">6</div><div class="step-main"><div class="sname">Base (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div><div class="step-utility util-sage"><em>Cobertura activa</em>Cubre imperfecciones y trata activamente con SA y Zinc.</div></div>
         </div>
       </div>
       <hr class="divider">
       <div class="session">
         <div class="sess-head"><span class="spill spill-rest">PM — Recuperación</span><span class="ssub">La barrera descansa tras el AHA del lunes</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-rest">1</div><div><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div></div>
-          <div class="step"><div class="num num-rest">2</div><div><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div></div>
-          <div class="step"><div class="num num-rest">3</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step"><div class="num num-rest">4</div><div><div class="sname">Sérum suave</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div></div></div>
-          <div class="step"><div class="num num-rest">5</div><div><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-rest">1</div><div class="step-main"><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div><div class="step-utility util-slate"><em>Pre-limpieza</em>Retira residuos para que la piel pueda regenerarse.</div></div>
+          <div class="step"><div class="num num-rest">2</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div><div class="step-utility util-slate"><em>Limpieza suave</em>Limpia sin estimular — la barrera ya trabajó anoche con AHA.</div></div>
+          <div class="step"><div class="num num-rest">3</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-slate"><em>Calma + minerales</em>Aporta minerales calmantes mientras la barrera se recupera.</div></div>
+          <div class="step"><div class="num num-rest">4</div><div class="step-main"><div class="sname">Sérum suave</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc</div></div><div class="step-utility util-slate"><em>Estabilización</em>Niacinamida activa la reparación sin irritar. Compatible con recuperación.</div></div>
+          <div class="step"><div class="num num-rest">5</div><div class="step-main"><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div></div><div class="step-utility util-slate"><em>Reparación de barrera</em>NMF repone los factores de hidratación mientras duermes. Siempre, sin excepción.</div></div>
         </div>
       </div>
     </div>
 
-    <!-- MIÉ — Effaclar AM → Probio-BHA sérum -->
+    <!-- ── MIÉ ── -->
     <div class="dcontent" id="d-mie">
       <div class="session">
         <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Limpiador A · Probio-BHA · protección</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-am">1</div><div><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div></div>
-          <div class="step"><div class="num num-am">2</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step step-new"><div class="num num-new">3</div><div><div class="sname">Sérum activo <span class="new-badge">NUEVO</span></div><div class="sprod">Vichy Normaderm Probio-BHA</div><div class="snote">BHA + niacinamida + probióticos. Solo los días de Effaclar AM.</div><div class="tags"><span class="tag tag-teal">BHA suave</span><span class="tag tag-teal">Poros</span><span class="tag tag-teal">Probióticos</span></div></div></div>
-          <div class="step"><div class="num num-am">4</div><div><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div></div>
-          <div class="step"><div class="num num-am">5</div><div><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div></div>
-          <div class="step"><div class="num num-am">6</div><div><div class="sname">Base de maquillaje (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-am">1</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div><div class="step-utility util-sage"><em>Limpieza</em>Zinc PCA reduce producción de sebo desde la limpieza.</div></div>
+          <div class="step"><div class="num num-am">2</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-sage"><em>Preparación</em>Mineraliza y prepara la absorción del Probio-BHA.</div></div>
+          <div class="step step-new"><div class="num num-new">3</div><div class="step-main"><div class="sname">Sérum AM <span class="new-badge">NUEVO</span></div><div class="sprod">Vichy Normaderm Probio-BHA</div><div class="snote">Solo días de Effaclar AM.</div><div class="tags"><span class="tag tag-teal">BHA suave</span><span class="tag tag-teal">Probióticos</span></div></div><div class="step-utility util-teal"><em>Poros + microbioma</em>BHA cosmético mantiene poros limpios durante el día. Probióticos modulan el microbioma.</div></div>
+          <div class="step"><div class="num num-am">4</div><div class="step-main"><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div><div class="step-utility util-sage"><em>Hidratación + control sebo</em>Imprescindible antes del retinol nocturno — piel bien hidratada tolera mejor el retinol.</div></div>
+          <div class="step"><div class="num num-am">5</div><div class="step-main"><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div><div class="step-utility util-amber"><em>Protección esencial</em>Crítico hoy: el retinol nocturno aumenta fotosensibilidad. SPF alto obligatorio.</div></div>
+          <div class="step"><div class="num num-am">6</div><div class="step-main"><div class="sname">Base (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div><div class="step-utility util-sage"><em>Cobertura activa</em>Cubre y trata con SA 0.5%.</div></div>
         </div>
       </div>
       <hr class="divider">
       <div class="session">
         <div class="sess-head"><span class="spill spill-pm">PM — Noche</span><span class="ssub">Retinol · renovación celular</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-pm">1</div><div><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div></div>
-          <div class="step"><div class="num num-pm">2</div><div><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div></div></div>
-          <div class="step"><div class="num num-pm">3</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div><div class="snote">Dejar secar completamente antes del retinol.</div></div></div>
-          <div class="step"><div class="num num-pm">4</div><div><div class="sname">Activo — Retinol</div><div class="sprod">The Ordinary Retinol 0.5% in Squalane</div><div class="snote">Piel 100% seca obligatorio.</div><div class="tags"><span class="tag tag-indigo">Renovación celular</span><span class="tag tag-rose">Piel seca obligatorio</span></div></div></div>
-          <div class="step"><div class="num num-pm">5</div><div><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div><div class="snote">Solo NMF+HA. Sin niacinamida esta noche.</div><div class="tags"><span class="tag tag-rose">Sin niacinamida</span></div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-pm">1</div><div class="step-main"><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div><div class="step-utility util-indigo"><em>Pre-limpieza</em>El retinol necesita piel completamente limpia para penetrar de forma uniforme.</div></div>
+          <div class="step"><div class="num num-pm">2</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div></div><div class="step-utility util-indigo"><em>Limpieza suave</em>Normaderm calma la piel antes del retinol.</div></div>
+          <div class="step"><div class="num num-pm">3</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div><div class="snote">Dejar secar completamente antes del retinol.</div></div><div class="step-utility util-indigo"><em>Preparación seca</em>El retinol en piel húmeda penetra más y aumenta el riesgo de irritación.</div></div>
+          <div class="step"><div class="num num-pm">4</div><div class="step-main"><div class="sname">Activo — Retinol</div><div class="sprod">The Ordinary Retinol 0.5% in Squalane</div><div class="snote">Piel 100% seca. Sin niacinamida después.</div><div class="tags"><span class="tag tag-indigo">Renovación celular</span><span class="tag tag-rose">Piel seca</span></div></div><div class="step-utility util-indigo"><em>Renovación + poros</em>Activo con más evidencia clínica. Acelera renovación celular, regula la queratinización y reduce comedones a largo plazo.</div></div>
+          <div class="step"><div class="num num-pm">5</div><div class="step-main"><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div><div class="snote">Solo NMF+HA esta noche. Sin niacinamida.</div><div class="tags"><span class="tag tag-rose">Sin niacinamida</span></div></div><div class="step-utility util-indigo"><em>Reparación de barrera</em>Sella y repara la barrera sobre el retinol. NMF reduce el descamado y la irritación post-retinol.</div></div>
         </div>
       </div>
     </div>
 
-    <!-- JUE — Normaderm AM → sin Probio-BHA -->
+    <!-- ── JUE ── -->
     <div class="dcontent" id="d-jue">
       <div class="session">
         <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Limpiador B · niacinamida · protección</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-am">1</div><div><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div><div class="snote">Hoy Normaderm AM — no usar el Probio-BHA.</div></div></div>
-          <div class="step"><div class="num num-am">2</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step"><div class="num num-am">3</div><div><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div></div></div>
-          <div class="step"><div class="num num-am">4</div><div><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div></div>
-          <div class="step"><div class="num num-am">5</div><div><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div></div>
-          <div class="step"><div class="num num-am">6</div><div><div class="sname">Base de maquillaje (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-am">1</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div><div class="snote">Hoy Normaderm AM — omitir el Probio-BHA serum.</div></div><div class="step-utility util-sage"><em>Limpieza suave</em>Probióticos y limpieza gentil — la piel aún se recupera del retinol de anoche.</div></div>
+          <div class="step"><div class="num num-am">2</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-sage"><em>Calmante + preparación</em>Los minerales calman la piel post-retinol.</div></div>
+          <div class="step"><div class="num num-am">3</div><div class="step-main"><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc</div></div><div class="step-utility util-sage"><em>Reparación + control sebo</em>Niacinamida apoya la recuperación de la barrera después del retinol nocturno.</div></div>
+          <div class="step"><div class="num num-am">4</div><div class="step-main"><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div><div class="step-utility util-sage"><em>Hidratación esencial</em>Hoy es especialmente importante hidratar bien tras el retinol.</div></div>
+          <div class="step"><div class="num num-am">5</div><div class="step-main"><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div><div class="step-utility util-amber"><em>Protección esencial</em>Post-retinol la piel es más fotosensible. SPF alto especialmente importante hoy.</div></div>
+          <div class="step"><div class="num num-am">6</div><div class="step-main"><div class="sname">Base (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div><div class="step-utility util-sage"><em>Cobertura activa</em>Cubre y trata al mismo tiempo.</div></div>
         </div>
       </div>
       <hr class="divider">
       <div class="session">
         <div class="sess-head"><span class="spill spill-rest">PM — Recuperación</span><span class="ssub">La barrera descansa tras el retinol del miércoles</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-rest">1</div><div><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div></div>
-          <div class="step"><div class="num num-rest">2</div><div><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div></div>
-          <div class="step"><div class="num num-rest">3</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step"><div class="num num-rest">4</div><div><div class="sname">Sérum suave</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div></div></div>
-          <div class="step"><div class="num num-rest">5</div><div><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-rest">1</div><div class="step-main"><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div><div class="step-utility util-slate"><em>Pre-limpieza</em>Retira residuos antes de la limpieza.</div></div>
+          <div class="step"><div class="num num-rest">2</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div><div class="step-utility util-slate"><em>Limpieza</em>Sin activos agresivos esta noche — la barrera necesita consolidarse.</div></div>
+          <div class="step"><div class="num num-rest">3</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-slate"><em>Calmante</em>Aporta minerales reparadores.</div></div>
+          <div class="step"><div class="num num-rest">4</div><div class="step-main"><div class="sname">Sérum suave</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc</div></div><div class="step-utility util-slate"><em>Estabilización</em>Activa la recuperación sin irritar.</div></div>
+          <div class="step"><div class="num num-rest">5</div><div class="step-main"><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div></div><div class="step-utility util-slate"><em>Reparación de barrera</em>La barrera se regenera durante el sueño. NMF es el combustible de ese proceso.</div></div>
         </div>
       </div>
     </div>
 
-    <!-- VIE — Effaclar AM → Probio-BHA sérum -->
+    <!-- ── VIE ── -->
     <div class="dcontent" id="d-vie">
       <div class="session">
         <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Limpiador A · Probio-BHA · protección</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-am">1</div><div><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div></div>
-          <div class="step"><div class="num num-am">2</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step step-new"><div class="num num-new">3</div><div><div class="sname">Sérum activo <span class="new-badge">NUEVO</span></div><div class="sprod">Vichy Normaderm Probio-BHA</div><div class="snote">Solo los días de Effaclar AM.</div><div class="tags"><span class="tag tag-teal">BHA suave</span><span class="tag tag-teal">Poros</span><span class="tag tag-teal">Probióticos</span></div></div></div>
-          <div class="step"><div class="num num-am">4</div><div><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div></div>
-          <div class="step"><div class="num num-am">5</div><div><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div></div>
-          <div class="step"><div class="num num-am">6</div><div><div class="sname">Base de maquillaje (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-am">1</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div><div class="step-utility util-sage"><em>Limpieza</em>Zinc PCA regula el sebo desde el primer paso.</div></div>
+          <div class="step"><div class="num num-am">2</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-sage"><em>Preparación</em>Mineraliza la piel para mejorar absorción del Probio-BHA.</div></div>
+          <div class="step step-new"><div class="num num-new">3</div><div class="step-main"><div class="sname">Sérum AM <span class="new-badge">NUEVO</span></div><div class="sprod">Vichy Normaderm Probio-BHA</div><div class="snote">Solo días de Effaclar AM.</div><div class="tags"><span class="tag tag-teal">BHA suave</span><span class="tag tag-teal">Probióticos</span></div></div><div class="step-utility util-teal"><em>Poros + microbioma</em>Complementa el BHA nocturno del COSRX: el Probio-BHA mantiene los poros limpios durante el día.</div></div>
+          <div class="step"><div class="num num-am">4</div><div class="step-main"><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div><div class="step-utility util-sage"><em>Hidratación + mate</em>Sella los activos y mantiene la piel hidratada para el BHA nocturno.</div></div>
+          <div class="step"><div class="num num-am">5</div><div class="step-main"><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div><div class="step-utility util-amber"><em>Protección esencial</em>Último paso siempre. Protege todo el trabajo de la rutina nocturna.</div></div>
+          <div class="step"><div class="num num-am">6</div><div class="step-main"><div class="sname">Base (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div><div class="step-utility util-sage"><em>Cobertura activa</em>SA y Zinc PCA tratan activamente durante el día.</div></div>
         </div>
       </div>
       <hr class="divider">
       <div class="session">
         <div class="sess-head"><span class="spill spill-pm">PM — Noche</span><span class="ssub">BHA · desobstrucción profunda de poros</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-pm">1</div><div><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div></div>
-          <div class="step"><div class="num num-pm">2</div><div><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div></div></div>
-          <div class="step"><div class="num num-pm">3</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step"><div class="num num-pm">4</div><div><div class="sname">Activo — BHA</div><div class="sprod">COSRX BHA Blackhead Power Liquid</div><div class="snote">Esperar 5-10 min antes del siguiente paso.</div><div class="tags"><span class="tag tag-indigo">Betaína salicilato 4%</span><span class="tag tag-indigo">Anti-comedones</span></div></div></div>
-          <div class="step"><div class="num num-pm">5</div><div><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div></div></div>
-          <div class="step"><div class="num num-pm">6</div><div><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-pm">1</div><div class="step-main"><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div><div class="step-utility util-indigo"><em>Pre-limpieza</em>El BHA necesita piel limpia para penetrar dentro del poro.</div></div>
+          <div class="step"><div class="num num-pm">2</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div></div><div class="step-utility util-indigo"><em>Limpieza</em>Normaderm prepara con probióticos antes del BHA activo.</div></div>
+          <div class="step"><div class="num num-pm">3</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-indigo"><em>Preparación</em>Hidrata y prepara la piel para recibir el BHA.</div></div>
+          <div class="step"><div class="num num-pm">4</div><div class="step-main"><div class="sname">Activo — BHA</div><div class="sprod">COSRX BHA Blackhead Power Liquid</div><div class="snote">Esperar 5-10 min antes del siguiente paso.</div><div class="tags"><span class="tag tag-indigo">Betaína salicilato 4%</span><span class="tag tag-indigo">Anti-comedones</span></div></div><div class="step-utility util-indigo"><em>Desobstrucción profunda</em>El BHA es liposoluble — disuelve el sebo dentro del poro. Elimina puntos negros y comedones desde adentro.</div></div>
+          <div class="step"><div class="num num-pm">5</div><div class="step-main"><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc</div></div><div class="step-utility util-indigo"><em>Calma + sebo</em>Calma la inflamación post-BHA y regula el sebo para la noche.</div></div>
+          <div class="step"><div class="num num-pm">6</div><div class="step-main"><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div></div><div class="step-utility util-indigo"><em>Reparación de barrera</em>Sella y repara. El BHA puede resecar ligeramente — NMF compensa.</div></div>
         </div>
       </div>
     </div>
 
-    <!-- SÁB — Normaderm AM → sin Probio-BHA -->
+    <!-- ── SÁB ── -->
     <div class="dcontent" id="d-sab">
       <div class="session">
         <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Limpiador B · niacinamida · protección</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-am">1</div><div><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div><div class="snote">Hoy Normaderm AM — no usar el Probio-BHA.</div></div></div>
-          <div class="step"><div class="num num-am">2</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step"><div class="num num-am">3</div><div><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div></div></div>
-          <div class="step"><div class="num num-am">4</div><div><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div></div>
-          <div class="step"><div class="num num-am">5</div><div><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div></div>
-          <div class="step"><div class="num num-am">6</div><div><div class="sname">Base de maquillaje (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-am">1</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div><div class="snote">Hoy Normaderm AM — omitir el Probio-BHA serum.</div></div><div class="step-utility util-sage"><em>Limpieza suave</em>Probióticos gentiles tras el BHA de anoche.</div></div>
+          <div class="step"><div class="num num-am">2</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-sage"><em>Calmante + preparación</em>Aporta minerales calmantes post-BHA.</div></div>
+          <div class="step"><div class="num num-am">3</div><div class="step-main"><div class="sname">Sérum activo</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc</div></div><div class="step-utility util-sage"><em>Control sebo + calma</em>Regula el sebo del fin de semana y ayuda a la recuperación.</div></div>
+          <div class="step"><div class="num num-am">4</div><div class="step-main"><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div><div class="step-utility util-sage"><em>Hidratación + mate</em>Para el fin de semana: la piel descansada con buena hidratación produce menos sebo.</div></div>
+          <div class="step"><div class="num num-am">5</div><div class="step-main"><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div><div class="step-utility util-amber"><em>Protección esencial</em>Fin de semana = más sol. SPF obligatorio siempre.</div></div>
+          <div class="step"><div class="num num-am">6</div><div class="step-main"><div class="sname">Base (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div><div class="step-utility util-sage"><em>Cobertura activa</em>Opcional para el fin de semana.</div></div>
         </div>
       </div>
       <hr class="divider">
       <div class="session">
         <div class="sess-head"><span class="spill spill-rest">PM — Recuperación</span><span class="ssub">Fin de semana · sin activos, solo barrera</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-rest">1</div><div><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div></div>
-          <div class="step"><div class="num num-rest">2</div><div><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div></div>
-          <div class="step"><div class="num num-rest">3</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step"><div class="num num-rest">4</div><div><div class="sname">Sérum suave</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div></div></div>
-          <div class="step"><div class="num num-rest">5</div><div><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div><div class="snote">Dos noches seguidas sin activos — la barrera se consolida.</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-rest">1</div><div class="step-main"><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div><div class="step-utility util-slate"><em>Pre-limpieza</em>Retira residuos antes de la recuperación nocturna.</div></div>
+          <div class="step"><div class="num num-rest">2</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div><div class="step-utility util-slate"><em>Limpieza</em>Limpia sin sobreestimular en noche de recuperación.</div></div>
+          <div class="step"><div class="num num-rest">3</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-slate"><em>Calmante</em>Minerales que apoyan la reparación cutánea nocturna.</div></div>
+          <div class="step"><div class="num num-rest">4</div><div class="step-main"><div class="sname">Sérum suave</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc</div></div><div class="step-utility util-slate"><em>Estabilización</em>Sin ácidos ni retinol — la niacinamida puede actuar en paz.</div></div>
+          <div class="step"><div class="num num-rest">5</div><div class="step-main"><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div><div class="snote">Dos noches seguidas sin activos — la barrera se consolida.</div></div><div class="step-utility util-slate"><em>Reparación completa</em>Dos noches seguidas de NMF = la barrera entra el lunes regenerada y lista para los activos.</div></div>
         </div>
       </div>
     </div>
 
-    <!-- DOM — Effaclar AM → Probio-BHA sérum -->
+    <!-- ── DOM ── -->
     <div class="dcontent" id="d-dom">
       <div class="session">
         <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Limpiador A · Probio-BHA · protección</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-am">1</div><div><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div></div>
-          <div class="step"><div class="num num-am">2</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step step-new"><div class="num num-new">3</div><div><div class="sname">Sérum activo <span class="new-badge">NUEVO</span></div><div class="sprod">Vichy Normaderm Probio-BHA</div><div class="snote">Solo los días de Effaclar AM.</div><div class="tags"><span class="tag tag-teal">BHA suave</span><span class="tag tag-teal">Poros</span><span class="tag tag-teal">Probióticos</span></div></div></div>
-          <div class="step"><div class="num num-am">4</div><div><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div></div>
-          <div class="step"><div class="num num-am">5</div><div><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div></div>
-          <div class="step"><div class="num num-am">6</div><div><div class="sname">Base de maquillaje (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-am">1</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">LRP Effaclar Gel+M</div></div><div class="step-utility util-sage"><em>Limpieza</em>Arranca la semana con Effaclar — mañana vuelve el AHA.</div></div>
+          <div class="step"><div class="num num-am">2</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-sage"><em>Preparación</em>Mineraliza y activa absorción del Probio-BHA.</div></div>
+          <div class="step step-new"><div class="num num-new">3</div><div class="step-main"><div class="sname">Sérum AM <span class="new-badge">NUEVO</span></div><div class="sprod">Vichy Normaderm Probio-BHA</div><div class="snote">Solo días de Effaclar AM.</div><div class="tags"><span class="tag tag-teal">BHA suave</span><span class="tag tag-teal">Probióticos</span></div></div><div class="step-utility util-teal"><em>Poros + microbioma</em>Mantiene los poros limpios el día de descanso antes del AHA del lunes.</div></div>
+          <div class="step"><div class="num num-am">4</div><div class="step-main"><div class="sname">Hidratante matificante</div><div class="sprod">LRP Effaclar Mat</div></div><div class="step-utility util-sage"><em>Hidratación + mate</em>Piel bien hidratada = mejor respuesta al AHA de mañana noche.</div></div>
+          <div class="step"><div class="num num-am">5</div><div class="step-main"><div class="sname">Protección solar</div><div class="sprod">LRP Anthelios UVMune 400 SPF 50+</div><div class="tags"><span class="tag tag-amber">Último paso AM</span></div></div><div class="step-utility util-amber"><em>Protección esencial</em>Último día del fin de semana — SPF siempre, llueva o no.</div></div>
+          <div class="step"><div class="num num-am">6</div><div class="step-main"><div class="sname">Base (opcional)</div><div class="sprod">Clinique Anti-Blemish Solutions</div></div><div class="step-utility util-sage"><em>Cobertura activa</em>Opcional según el plan del día.</div></div>
         </div>
       </div>
       <hr class="divider">
       <div class="session">
         <div class="sess-head"><span class="spill spill-rest">PM — Recuperación</span><span class="ssub">Cierre de semana · solo barrera</span></div>
         <div class="steps">
-          <div class="step"><div class="num num-rest">1</div><div><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div></div>
-          <div class="step"><div class="num num-rest">2</div><div><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div></div></div>
-          <div class="step"><div class="num num-rest">3</div><div><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div></div>
-          <div class="step"><div class="num num-rest">4</div><div><div class="sname">Sérum suave</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div></div></div>
-          <div class="step"><div class="num num-rest">5</div><div><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div><div class="snote">La semana cierra con la barrera consolidada.</div></div></div>
+          <div class="steps-header"><div></div><div class="col-label">Producto</div><div class="col-label utility">¿Para qué sirve?</div></div>
+          <div class="step"><div class="num num-rest">1</div><div class="step-main"><div class="sname">Desmaquillado (si aplica)</div><div class="sprod">Agua micelar oil-free → aclarar</div></div><div class="step-utility util-slate"><em>Pre-limpieza</em>Base para una recuperación nocturna completa.</div></div>
+          <div class="step"><div class="num num-rest">2</div><div class="step-main"><div class="sname">Limpieza</div><div class="sprod">Vichy Normaderm Phytosolution</div></div><div class="step-utility util-slate"><em>Limpieza suave</em>Cierra el fin de semana con probióticos — mañana empieza el ciclo activo.</div></div>
+          <div class="step"><div class="num num-rest">3</div><div class="step-main"><div class="sname">Agua termal</div><div class="sprod">Uriage Eau Thermale</div></div><div class="step-utility util-slate"><em>Calmante</em>Mineraliza sin estimular.</div></div>
+          <div class="step"><div class="num num-rest">4</div><div class="step-main"><div class="sname">Sérum suave</div><div class="sprod">The Ordinary Niacinamide 10% + Zinc</div></div><div class="step-utility util-slate"><em>Estabilización</em>Prepara la barrera para el ciclo de activos de la semana que empieza.</div></div>
+          <div class="step"><div class="num num-rest">5</div><div class="step-main"><div class="sname">Hidratante nocturno</div><div class="sprod">The Ordinary NMF + HA</div><div class="snote">La semana cierra con la barrera lista para el lunes.</div></div><div class="step-utility util-slate"><em>Reparación completa</em>La barrera entra la semana en óptimas condiciones para tolerar el AHA del lunes.</div></div>
         </div>
       </div>
     </div>
-  </div>
+  </div><!-- /t-daily -->
 
-  <!-- ════════════ WEEKLY ════════════ -->
+  <!-- ══════════════════════════════════════
+       WEEKLY
+  ══════════════════════════════════════ -->
   <div class="panel" id="t-weekly">
     <div class="slabel">Vista semanal</div>
     <div class="wgrid">
@@ -383,57 +828,63 @@ h1 em { font-style: italic; color: var(--sage); }
       <div class="wday"><div class="wdh">DOM</div><div class="wdb"><div class="wt wt-am">Gel+M</div><div class="wt wt-new">Probio-BHA</div><div class="wt wt-am">Mat+SPF</div><div class="wt wt-rest">Norma.</div><div class="wt wt-rest">Niacin.</div><div class="wt wt-rest">NMF+HA</div><div class="wt wt-rest">↳ recupera</div></div></div>
     </div>
     <div class="wlegend">
-      <div class="wleg-item"><div class="wleg-dot am"></div>AM diaria</div>
-      <div class="wleg-item"><div class="wleg-dot new"></div>Probio-BHA (días Effaclar)</div>
-      <div class="wleg-item"><div class="wleg-dot pm"></div>PM activo</div>
-      <div class="wleg-item"><div class="wleg-dot rest"></div>PM recuperación</div>
+      <div class="wleg"><div class="wleg-dot am"></div>AM base diaria</div>
+      <div class="wleg"><div class="wleg-dot new"></div>Probio-BHA (días Effaclar)</div>
+      <div class="wleg"><div class="wleg-dot pm"></div>PM activo (AHA / Retinol / BHA)</div>
+      <div class="wleg"><div class="wleg-dot rest"></div>PM recuperación — sin activos agresivos</div>
     </div>
     <div class="callout callout-teal" style="margin-top:16px">
-      <b>Lógica del Probio-BHA:</b> Solo los días que el limpiador AM es Effaclar (lun, mié, vie, dom). Los días de Normaderm AM (mar, jue, sáb) no se usa — evita acumular demasiado Normaderm en una sola sesión.
+      <b>Lógica semanal:</b> AHA el lunes · Retinol el miércoles · BHA el viernes. Cada activo tiene su noche de recuperación al día siguiente. Probio-BHA en AM de lunes, miércoles, viernes y domingo (días Effaclar). 4 noches sin activos para que la barrera se consolide.
     </div>
   </div>
 
-  <!-- ════════════ PRODUCTS ════════════ -->
+  <!-- ══════════════════════════════════════
+       PRODUCTS
+  ══════════════════════════════════════ -->
   <div class="panel" id="t-products">
     <div class="slabel">Todos los productos</div>
     <div class="pgrid">
-      <div class="pcard"><div class="pcat">Limpiador A — lun/mié/vie/dom AM</div><div class="pname">Effaclar Gel+M</div><div class="pbrand">La Roche-Posay · 400 ml · Salcobrand</div></div>
-      <div class="pcard"><div class="pcat">Limpiador B — mar/jue/sáb AM</div><div class="pname">Normaderm Phytosolution</div><div class="pbrand">Vichy · 400 ml · Salcobrand</div></div>
-      <div class="pcard pcard-new"><div class="pcat">Sérum AM — lun/mié/vie/dom</div><div class="pname">Normaderm Probio-BHA Sérum</div><div class="pbrand">Vichy · solo días de Effaclar AM</div></div>
-      <div class="pcard"><div class="pcat">Agua termal — AM + PM</div><div class="pname">Eau Thermale Spray</div><div class="pbrand">Uriage · 300 ml · Salcobrand / Cruz Verde</div></div>
-      <div class="pcard"><div class="pcat">Sérum AM — mar/jue/sáb + PM activas</div><div class="pname">Niacinamide 10% + Zinc 1%</div><div class="pbrand">The Ordinary · 30 ml · Blush-Bar / Modum</div></div>
-      <div class="pcard"><div class="pcat">Hidratante AM</div><div class="pname">Effaclar Mat</div><div class="pbrand">La Roche-Posay · 40 ml · Salcobrand</div></div>
-      <div class="pcard"><div class="pcat">Protección solar — AM diaria</div><div class="pname">Anthelios UVMune 400 Oil Control</div><div class="pbrand">LRP · SPF 50+ · 50 ml · Salcobrand</div></div>
-      <div class="pcard"><div class="pcat">AHA — lunes PM</div><div class="pname">Glycolic Acid 7% Toner</div><div class="pbrand">The Ordinary · 240 ml · Blush-Bar / Modum</div></div>
-      <div class="pcard"><div class="pcat">BHA — viernes PM</div><div class="pname">BHA Blackhead Power Liquid</div><div class="pbrand">COSRX · 100 ml · Blush-Bar / DBS</div></div>
-      <div class="pcard"><div class="pcat">Retinol — miércoles PM</div><div class="pname">Retinol 0.5% in Squalane</div><div class="pbrand">The Ordinary · 30 ml · Blush-Bar / Modum</div></div>
-      <div class="pcard"><div class="pcat">Hidratante PM — todas las noches</div><div class="pname">Natural Moisturizing Factors + HA</div><div class="pbrand">The Ordinary · 100 ml · Blush-Bar / Modum</div></div>
-      <div class="pcard pcard-accent"><div class="pcat">Base de maquillaje (opcional)</div><div class="pname">Anti-Blemish Solutions Liquid Makeup</div><div class="pbrand">Clinique · 30 ml · Blush-Bar Chile</div></div>
-      <div class="pcard"><div class="pcat">Desmaquillante</div><div class="pname">Agua micelar oil-free</div><div class="pbrand">Cualquier marca · paso previo al limpiador</div></div>
+      <div class="pcard"><div class="pcat">Limpiador A — lun/mié/vie/dom AM</div><div class="pname">Effaclar Gel+M</div><div class="pbrand">La Roche-Posay · 400 ml · Salcobrand</div><div class="putil"><b>Para qué:</b> limpia eliminando el exceso de sebo sin alterar el microbioma. Zinc PCA reduce la producción de grasa desde la limpieza.</div></div>
+      <div class="pcard"><div class="pcat">Limpiador B — mar/jue/sáb AM</div><div class="pname">Normaderm Phytosolution</div><div class="pbrand">Vichy · 400 ml · Salcobrand</div><div class="putil"><b>Para qué:</b> limpia con probióticos activos que equilibran el microbioma. Se alterna con Effaclar para dar estímulos distintos cada día.</div></div>
+      <div class="pcard pcard-teal"><div class="pcat">Sérum AM — lun/mié/vie/dom</div><div class="pname">Normaderm Probio-BHA</div><div class="pbrand">Vichy · solo días de Effaclar AM</div><div class="putil"><b>Para qué:</b> BHA cosmético mantiene los poros limpios durante el día. Probióticos y niacinamida calman y regulan al mismo tiempo.</div></div>
+      <div class="pcard"><div class="pcat">Agua termal — AM + PM</div><div class="pname">Eau Thermale Spray</div><div class="pbrand">Uriage · 300 ml · Salcobrand / Cruz Verde</div><div class="putil"><b>Para qué:</b> 11.000 mg/L de minerales forman una película que mejora la absorción del activo siguiente. No es agua corriente.</div></div>
+      <div class="pcard"><div class="pcat">Sérum — mar/jue/sáb AM + PM activas</div><div class="pname">Niacinamide 10% + Zinc 1%</div><div class="pbrand">The Ordinary · 30 ml · Blush-Bar / Modum</div><div class="putil"><b>Para qué:</b> reduce sebo, poros y inflamación. Compatible con casi todo. Actúa como estabilizador entre los activos más agresivos.</div></div>
+      <div class="pcard"><div class="pcat">Hidratante AM</div><div class="pname">Effaclar Mat</div><div class="pbrand">La Roche-Posay · 40 ml · Salcobrand</div><div class="putil"><b>Para qué:</b> sin hidratación la piel produce más sebo para compensar. El Mat hidrata sin engrasar y mantiene acabado mate 8h.</div></div>
+      <div class="pcard"><div class="pcat">Protección solar — AM diaria</div><div class="pname">Anthelios UVMune 400 Oil Control</div><div class="pbrand">LRP · SPF 50+ · 50 ml · Salcobrand</div><div class="putil"><b>Para qué:</b> el activo antienvejecimiento más eficaz. Bloquea UVA ultra-larga que agrava el acné y las manchas. Sin él, todo lo demás trabaja a medias.</div></div>
+      <div class="pcard"><div class="pcat">AHA — lunes PM</div><div class="pname">Glycolic Acid 7% Toner</div><div class="pbrand">The Ordinary · 240 ml · Blush-Bar / Modum</div><div class="putil"><b>Para qué:</b> exfolia la superficie de la piel. Mejora textura, luminosidad y evita que los poros se obstruyan desde afuera.</div></div>
+      <div class="pcard"><div class="pcat">BHA — viernes PM</div><div class="pname">BHA Blackhead Power Liquid</div><div class="pbrand">COSRX · 100 ml · Blush-Bar / DBS</div><div class="putil"><b>Para qué:</b> el BHA es liposoluble — penetra dentro del poro y disuelve el sebo. Elimina puntos negros y comedones desde adentro.</div></div>
+      <div class="pcard"><div class="pcat">Retinol — miércoles PM</div><div class="pname">Retinol 0.5% in Squalane</div><div class="pbrand">The Ordinary · 30 ml · Blush-Bar / Modum</div><div class="putil"><b>Para qué:</b> mayor evidencia clínica en dermatología cosmética. Acelera renovación celular, regula la queratinización y reduce comedones a largo plazo.</div></div>
+      <div class="pcard"><div class="pcat">Hidratante PM — todas las noches</div><div class="pname">Natural Moisturizing Factors + HA</div><div class="pbrand">The Ordinary · 100 ml · Blush-Bar / Modum</div><div class="putil"><b>Para qué:</b> repone los factores de hidratación naturales que los ácidos y el retinol reducen. La barrera se repara mientras duermes con este producto.</div></div>
+      <div class="pcard pcard-amber"><div class="pcat">Base de maquillaje (opcional)</div><div class="pname">Anti-Blemish Solutions Liquid Makeup</div><div class="pbrand">Clinique · 30 ml · Blush-Bar Chile</div><div class="putil"><b>Para qué:</b> cubre y trata al mismo tiempo. SA 0.5% + Zinc PCA actúan sobre el acné durante el día sin que notes nada.</div></div>
+      <div class="pcard"><div class="pcat">Desmaquillante</div><div class="pname">Agua micelar oil-free</div><div class="pbrand">Cualquier marca · paso previo al limpiador</div><div class="putil"><b>Para qué:</b> retira el maquillaje y el protector solar antes del limpiador. Sin este paso los activos nocturnos no penetran correctamente.</div></div>
     </div>
   </div>
 
-  <!-- ════════════ RULES ════════════ -->
+  <!-- ══════════════════════════════════════
+       RULES
+  ══════════════════════════════════════ -->
   <div class="panel" id="t-rules">
     <div class="slabel">Protocolos y restricciones</div>
-    <div class="callout callout-teal"><b>Probio-BHA — regla de uso:</b> Solo los días que el limpiador AM es Effaclar (lun, mié, vie, dom). Los días de Normaderm AM omitirlo — el limpiador ya aporta probióticos y activos similares, y duplicarlos en la misma sesión no suma beneficio.</div>
-    <div class="callout callout-green"><b>Alternancia de limpiadores:</b> Effaclar y Normaderm siempre invertidos entre AM y PM. Previene adaptación del microbioma a un solo activo.</div>
-    <div class="callout"><b>Agua termal — protocolo correcto:</b> Rociar a 20 cm, 2-3 segundos. Esperar 30 seg. NO secar ni abanicar. El efecto filmógeno mejora la absorción del siguiente paso.</div>
-    <div class="callout"><b>Retinol — regla de piel seca:</b> Las noches de miércoles, el agua termal debe secarse completamente antes de aplicar el retinol. La piel húmeda aumenta la penetración y el riesgo de irritación.</div>
-    <div class="callout"><b>Maquillaje — 3-5 min post-solar:</b> Esperar siempre después del Anthelios. Aplicar con beauty blender húmedo o brocha, nunca con los dedos.</div>
-    <div class="callout"><b>Doble limpieza nocturna:</b> Si llevaste maquillaje → agua micelar oil-free primero, aclarar, luego el limpiador habitual.</div>
-    <div class="alert"><b>Nunca en la misma sesión:</b><br>· Retinol + AHA o BHA<br>· Niacinamida en las noches de retinol<br>· Probio-BHA los días de Normaderm AM<br>· Dos exfoliantes en noches consecutivas</div>
+    <div class="callout callout-teal"><b>Probio-BHA — regla de uso:</b> Solo los días que el limpiador AM es Effaclar (lun, mié, vie, dom). Los días de Normaderm AM (mar, jue, sáb) omitirlo — el limpiador ya aporta probióticos activos y duplicarlos no suma beneficio.</div>
+    <div class="callout callout-sage"><b>Alternancia de limpiadores:</b> Effaclar y Normaderm siempre invertidos entre AM y PM. Si Effaclar va en la mañana, Normaderm va esa noche. Previene que el microbioma se adapte a un solo activo.</div>
+    <div class="callout"><b>Agua termal — protocolo correcto:</b> Rociar a 20 cm, 2-3 segundos. Esperar 30 seg. NO secar ni abanicar. El efecto filmógeno mejora la absorción del siguiente paso. Evaporarla arrastra minerales y deshidrata.</div>
+    <div class="callout"><b>Retinol — regla de piel seca:</b> Las noches de miércoles, dejar secar completamente el agua termal antes de aplicar el retinol. La piel húmeda aumenta su penetración y el riesgo de irritación.</div>
+    <div class="callout"><b>Maquillaje — 3-5 min post-solar:</b> Esperar siempre después del Anthelios antes de la base Clinique. El protector húmedo se desplaza y la cobertura queda irregular. Aplicar con beauty blender húmedo o brocha, nunca con los dedos.</div>
+    <div class="callout"><b>Doble limpieza nocturna:</b> Si llevaste maquillaje → agua micelar oil-free primero, aclarar bien, luego el limpiador habitual. Sin este paso los activos nocturnos no penetran correctamente.</div>
+    <div class="alert"><b>Nunca en la misma sesión:</b><br>· Retinol + AHA o BHA — irritación severa y pérdida de barrera<br>· Niacinamida en las noches de retinol — omitir siempre<br>· Probio-BHA los días de Normaderm AM — evitar saturar el microbioma<br>· Dos exfoliantes en noches consecutivas sin recuperación entre ellos</div>
+
     <div class="slabel" style="margin-top:2rem">Introducción gradual — primeras 4 semanas</div>
     <div class="intro-grid">
-      <div class="intro-card"><div class="iw-num">01–02</div><div class="iw-title">Solo base</div><div class="iw-desc">AM completa + PM con limpieza, Uriage, niacinamida y NMF. Sin ácidos ni retinol.</div></div>
-      <div class="intro-card"><div class="iw-num">03</div><div class="iw-title">Primer ácido</div><div class="iw-desc">Agregar AHA 7% una noche. Evaluar reacción 7 días antes de continuar.</div></div>
-      <div class="intro-card"><div class="iw-num">04</div><div class="iw-title">Retinol</div><div class="iw-desc">Agregar retinol una noche. Introducir BHA solo si la piel toleró bien.</div></div>
-      <div class="intro-card"><div class="iw-num">05+</div><div class="iw-title">Rutina completa</div><div class="iw-desc">AHA lunes · Retinol miércoles · BHA viernes · Probio-BHA mañanas de Effaclar.</div></div>
+      <div class="intro-card"><div class="iw-num">01–02</div><div class="iw-title">Solo base</div><div class="iw-desc">AM completa + PM con limpieza, Uriage, niacinamida y NMF. Sin ácidos ni retinol. La barrera se acostumbra a la rutina.</div></div>
+      <div class="intro-card"><div class="iw-num">03</div><div class="iw-title">Primer ácido</div><div class="iw-desc">Agregar AHA 7% una noche. Evaluar reacción durante 7 días completos antes de continuar.</div></div>
+      <div class="intro-card"><div class="iw-num">04</div><div class="iw-title">Retinol</div><div class="iw-desc">Agregar retinol una noche. Introducir BHA solo si la piel toleró bien los pasos anteriores.</div></div>
+      <div class="intro-card"><div class="iw-num">05+</div><div class="iw-title">Rutina completa</div><div class="iw-desc">AHA lunes · Retinol mié · BHA viernes · Probio-BHA mañanas Effaclar. Si hay irritación, retroceder una semana.</div></div>
     </div>
-    <div class="callout callout-slate" style="margin-top:14px"><b>Las noches de recuperación son parte activa del protocolo.</b> Martes, jueves, sábado y domingo sin activos no son días perdidos — son cuando la barrera se repara y consolida.</div>
+    <div class="callout callout-slate" style="margin-top:14px"><b>Las noches de recuperación son parte activa del protocolo.</b> Martes, jueves, sábado y domingo sin activos no son días perdidos — son cuando la barrera se repara y consolida. Saltarlas para "hacer más" tiene el efecto contrario.</div>
   </div>
 
-</div>
+</div><!-- /page -->
+
 <script>
 function showTab(id, btn) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
