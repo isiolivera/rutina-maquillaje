@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Rutina Dermatológica — Piel Resistente & Calendario de Maquillaje</title>
+<title>Rutina Dermatológica — Piel Resistente & Cuidado Capilar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -152,12 +152,13 @@ h1 em { font-style: normal; color: var(--indigo); }
 .spill-pm   { background: var(--indigo-lt); color: var(--indigo); border: 1px solid var(--indigo-brd); }
 .spill-sky  { background: var(--sky-lt);    color: var(--sky);    border: 1px solid var(--sky-brd); }
 .spill-rest { background: var(--slate-lt);  color: var(--slate);  border: 1px solid var(--slate-brd); }
+.spill-hair { background: var(--purple-lt); color: var(--purple); border: 1px solid var(--purple-brd); }
 .ssub { font-size: 12px; color: var(--faint); }
 
 /* ── STEPS TABLE ── */
 .steps {
   border: 1px solid var(--line); border-radius: var(--r);
-  overflow: hidden; background: var(--surface, #fff);
+  overflow: hidden; background: #fff;
 }
 .steps-header {
   display: grid; grid-template-columns: 38px 1fr 160px;
@@ -183,7 +184,8 @@ h1 em { font-style: normal; color: var(--indigo); }
 .num-pm   { background: var(--indigo-md); color: var(--indigo); }
 .num-sky  { background: var(--sky-md);    color: var(--sky); }
 .num-rest { background: var(--slate-lt);  color: var(--slate); border: 1px solid var(--slate-brd); }
-.num-med  { background: var(--rose-lt);    color: var(--rose); border: 1px solid var(--rose-brd); }
+.num-med  { background: var(--rose-lt);   color: var(--rose); border: 1px solid var(--rose-brd); }
+.num-hair { background: var(--purple-lt); color: var(--purple); border: 1px solid var(--purple-brd); }
 
 .sname { font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 1px; }
 .sprod { font-size: 12.5px; font-weight: 500; color: var(--muted); margin-bottom: 3px; }
@@ -225,6 +227,8 @@ h1 em { font-style: normal; color: var(--indigo); }
 .callout-sage b { color: var(--sage); }
 .callout-sky    { background: var(--sky-lt);   border-color: var(--sky-brd);   color: #0369a1; }
 .callout-sky b  { color: var(--sky); }
+.callout-purple { background: var(--purple-lt); border-color: var(--purple-brd); color: #5b21b6; }
+.callout-purple b { color: var(--purple); }
 
 .alert {
   background: var(--rose-lt); border: 1px solid var(--rose-brd); border-radius: var(--r);
@@ -300,13 +304,13 @@ h1 em { font-style: normal; color: var(--indigo); }
   <!-- HEADER -->
   <div class="header">
     <div class="header-badge"><div class="header-badge-dot"></div>Tratamiento Dermatológico Potenciado · Piel Resistente</div>
-    <h1>Rutina de <em>Control</em><br>& Antimanchas</h1>
+    <h1>Rutina de <em>Control</em><br>& Antimanchas + Pelo</h1>
     <div class="header-tags">
       <span class="htag">Epiduo Gel (Adapaleno + BPO)</span>
       <span class="htag">Tetralysal Oral</span>
       <span class="htag">The Ordinary Niacinamide 10%</span>
       <span class="htag">Avène Masque Apaisant</span>
-      <span class="htag">Base 3 Días a la Semana</span>
+      <span class="htag">Cuidado Capilar Fortalecedor</span>
     </div>
   </div>
 
@@ -314,6 +318,7 @@ h1 em { font-style: normal; color: var(--indigo); }
   <div class="tabs">
     <button class="tab on" onclick="showTab('daily',this)">Rutina Diaria</button>
     <button class="tab" onclick="showTab('weekly',this)">Estructura Semanal</button>
+    <button class="tab" onclick="showTab('hair',this)">Cuidado Capilar</button>
     <button class="tab" onclick="showTab('products',this)">Mis Productos</button>
     <button class="tab" onclick="showTab('rules',this)">Reglas y Cuidados</button>
   </div>
@@ -653,136 +658,316 @@ h1 em { font-style: normal; color: var(--indigo); }
       <div class="wday">
         <div class="wdh">LUN</div>
         <div class="wdb">
-          <div class="wt wt-purple">Niacinamida</div>
-          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-am">AM: Niacinamide</div>
           <div class="wt wt-amber">Base Double Wear</div>
-          <div class="wt wt-pm">Doble Limp.</div>
-          <div class="wt wt-pm">EPIDUO</div>
+          <div class="wt wt-pm">PM: Epiduo</div>
         </div>
       </div>
       <div class="wday">
         <div class="wdh">MAR</div>
         <div class="wdb">
-          <div class="wt wt-purple">Niacinamida</div>
-          <div class="wt wt-am">Effaclar + SPF</div>
-          <div class="wt wt-rest">Sin Base</div>
-          <div class="wt wt-pm">Doble Limp.</div>
-          <div class="wt wt-pm">EPIDUO</div>
+          <div class="wt wt-am">AM: Niacinamide</div>
+          <div class="wt wt-purple">Piel al Natural</div>
+          <div class="wt wt-pm">PM: Epiduo</div>
         </div>
       </div>
       <div class="wday">
         <div class="wdh">MIÉ</div>
         <div class="wdb">
-          <div class="wt wt-purple">Niacinamida</div>
-          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-am">AM: Niacinamide</div>
           <div class="wt wt-amber">Base Double Wear</div>
-          <div class="wt wt-pm">Doble Limp.</div>
-          <div class="wt wt-pm">EPIDUO</div>
+          <div class="wt wt-pm">PM: Epiduo</div>
         </div>
       </div>
       <div class="wday">
         <div class="wdh">JUE</div>
         <div class="wdb">
-          <div class="wt wt-purple">Niacinamida</div>
-          <div class="wt wt-am">Effaclar + SPF</div>
-          <div class="wt wt-rest">Sin Base</div>
-          <div class="wt wt-pm">Doble Limp.</div>
-          <div class="wt wt-pm">EPIDUO</div>
+          <div class="wt wt-am">AM: Niacinamide</div>
+          <div class="wt wt-purple">Piel al Natural</div>
+          <div class="wt wt-pm">PM: Epiduo</div>
         </div>
       </div>
       <div class="wday">
         <div class="wdh">VIE</div>
         <div class="wdb">
-          <div class="wt wt-purple">Niacinamida</div>
-          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-am">AM: Niacinamide</div>
           <div class="wt wt-amber">Base Double Wear</div>
-          <div class="wt wt-pm">Doble Limp.</div>
-          <div class="wt wt-pm">EPIDUO</div>
+          <div class="wt wt-pm">PM: Epiduo</div>
         </div>
       </div>
       <div class="wday">
         <div class="wdh">SÁB</div>
         <div class="wdb">
-          <div class="wt wt-purple">Niacinamida</div>
-          <div class="wt wt-am">Effaclar + SPF</div>
-          <div class="wt wt-rest">Sin Base</div>
-          <div class="wt wt-pm">Doble Limp.</div>
-          <div class="wt wt-pm">EPIDUO / SOS</div>
+          <div class="wt wt-am">AM: Niacinamide</div>
+          <div class="wt wt-purple">Piel al Natural</div>
+          <div class="wt wt-pm">PM: Epiduo</div>
         </div>
       </div>
       <div class="wday">
         <div class="wdh">DOM</div>
         <div class="wdb">
-          <div class="wt wt-purple">Niacinamida</div>
-          <div class="wt wt-am">Effaclar + SPF</div>
-          <div class="wt wt-rest">Sin Base</div>
+          <div class="wt wt-am">AM: Niacinamide</div>
           <div class="wt wt-sky">Mascarilla Avène</div>
-          <div class="wt wt-pm">Epiduo / Relax</div>
+          <div class="wt wt-rest">PM: Descanso / Epiduo</div>
         </div>
       </div>
     </div>
+
     <div class="wlegend">
-      <div class="wleg"><div class="wleg-dot purple"></div>Niacinamida 10% (Diario AM)</div>
-      <div class="wleg"><div class="wleg-dot amber"></div>Días de Base (Lun, Mié, Vie)</div>
-      <div class="wleg"><div class="wleg-dot rest"></div>Días Sin Base (Mar, Jue, Sáb, Dom)</div>
-      <div class="wleg"><div class="wleg-dot pm"></div>Epiduo Gel (PM)</div>
-      <div class="wleg"><div class="wleg-dot sky"></div>Mascarilla Avène Spa (Dom PM)</div>
+      <div class="wleg"><div class="wleg-dot am"></div>Niacinamida AM</div>
+      <div class="wleg"><div class="wleg-dot amber"></div>Día de Base (L-M-V)</div>
+      <div class="wleg"><div class="wleg-dot purple"></div>Día Sin Base (M-J-S)</div>
+      <div class="wleg"><div class="wleg-dot pm"></div>Epiduo Gel PM</div>
+      <div class="wleg"><div class="wleg-dot sky"></div>Spa / Mascarilla Avène</div>
     </div>
-    <div class="callout callout-sage" style="margin-top:16px">
-      <b>Medicamento Oral:</b> Recuerda tomar tu cápsula de <b>Tetralysal</b> todos los días con el desayuno o almuerzo.
-    </div>
-  </div>
+  </div><!-- /t-weekly -->
 
   <!-- ══════════════════════════════════════
-        PRODUCTS
+        HAIR CARE (NUEVA SECCIÓN DE PELO)
+  ══════════════════════════════════════ -->
+  <div class="panel" id="t-hair">
+    <div class="callout callout-purple" style="margin-bottom: 1.5rem;">
+      <b>Cuidado Capilar Integral:</b> Protocolo diseñado para mantener la salud del cuero cabelludo, prevenir la rotura y sellar las puntas sin aportar peso.
+    </div>
+
+    <!-- Lavado Intensivo -->
+    <div class="session">
+      <div class="sess-head">
+        <span class="spill spill-hair">Días de Lavado — 2 a 3 veces por semana</span>
+        <span class="ssub">Limpieza Suave · Nutrición · Protección Térmica</span>
+      </div>
+      <div class="steps">
+        <div class="steps-header">
+          <div></div>
+          <div class="col-label">Paso / Producto</div>
+          <div class="col-label utility">Objetivo principal</div>
+        </div>
+        <div class="step">
+          <div class="num num-hair">1</div>
+          <div class="step-main">
+            <div class="sname">Champú Neutro o Tratamiento</div>
+            <div class="sprod">Champú Suave Sin Sulfatos (o Anti-Residuos 1 vez por semana)</div>
+            <div class="snote">Masajear <strong>solo el cuero cabelludo</strong> con las yemas de los dedos durante 2 minutos. Enjuagar dejando que la espuma limpie las puntas sin frotar.</div>
+            <div class="tags"><span class="tag tag-purple">Cuero Cabelludo Limpio</span></div>
+          </div>
+          <div class="step-utility util-purple"><em>Higiene Suave</em>Elimina la grasa de la raíz sin resecar las puntas.</div>
+        </div>
+
+        <div class="step">
+          <div class="num num-hair">2</div>
+          <div class="step-main">
+            <div class="sname">Mascarilla o Acondicionador Hidratante</div>
+            <div class="sprod">Mascarilla Reparadora / Acondicionador con Aminoácidos</div>
+            <div class="snote">Retirar exceso de agua antes de aplicar. Aplicar de medios a puntas y dejar actuar de 3 a 5 minutos. Enjuagar con agua templada o fría.</div>
+            <div class="tags"><span class="tag tag-sky">Desenredo e Hidratación</span></div>
+          </div>
+          <div class="step-utility util-sky"><em>Nutrición de Fibra</em>Restaura la elasticidad del cabello y evita la fibra quebradiza.</div>
+        </div>
+
+        <div class="step">
+          <div class="num num-hair">3</div>
+          <div class="step-main">
+            <div class="sname">Protector Térmico & Leave-in (Húmedo)</div>
+            <div class="sprod">Sérum o Crema para peinar sin enjuague con Termoprotección</div>
+            <div class="snote">Aplicar sobre el cabello húmedo antes de peinar o secar con secador. Fundamentos si usas herramientas de calor.</div>
+            <div class="tags"><span class="tag tag-amber">Protección Térmica</span></div>
+          </div>
+          <div class="step-utility util-amber"><em>Escudo Térmico</em>Evita que la fibra capilar se abra y se queme al secar.</div>
+        </div>
+
+        <div class="step">
+          <div class="num num-hair">4</div>
+          <div class="step-main">
+            <div class="sname">Aceite Sellador de Puntas</div>
+            <div class="sprod">Aceite de Argán, Jojoba o Sérum de Puntas Abiertas</div>
+            <div class="snote">1 a 2 gotas en la palma de las manos. Distribuir exclusivamente en las puntas para sellar la humedad.</div>
+          </div>
+          <div class="step-utility util-sage"><em>Brillo & Sella</em>Sella la cutícula y mantiene las puntas suaves.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Rutina Diaria / Nocturna Capilar -->
+    <div class="session">
+      <div class="sess-head">
+        <span class="spill spill-rest">Mantenimiento Diario & Noche Capilar</span>
+        <span class="ssub">Prevención del Frizz · Protección Fricción Nocturna</span>
+      </div>
+      <div class="steps">
+        <div class="steps-header">
+          <div></div>
+          <div class="col-label">Paso / Producto</div>
+          <div class="col-label utility">Objetivo principal</div>
+        </div>
+        <div class="step">
+          <div class="num num-rest">1</div>
+          <div class="step-main">
+            <div class="sname">Masaje Estimulante en Seco (Noche)</div>
+            <div class="sprod">Cepillo de Cerdas Suaves o Yemas de los dedos</div>
+            <div class="snote">Masajear el cuero cabelludo suavemente en movimientos circulares antes de dormir para activar la circulación sanguínea.</div>
+          </div>
+          <div class="step-utility util-sage"><em>Circulación</em>Estimula el crecimiento folicular saludable.</div>
+        </div>
+
+        <div class="step">
+          <div class="num num-rest">2</div>
+          <div class="step-main">
+            <div class="sname">Protección Antifricción Nocturna</div>
+            <div class="sprod">Gorro de Satén / Funda de Almohada de Seda o Trenza Suelta</div>
+            <div class="snote">Recoger el cabello en una trenza muy suelta con Scrunchie de tela o cubrir con gorro de satén.</div>
+            <div class="tags"><span class="tag tag-purple">Cero Frizz</span><span class="tag tag-purple">Anti-rotura</span></div>
+          </div>
+          <div class="step-utility util-purple"><em>Anti-Quiebre</em>Evita el enredo y la rotura por fricción contra la almohada.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de Productos Capilares -->
+    <div class="slabel" style="margin-top: 2rem;">Productos de Cuidado Capilar</div>
+    <div class="pgrid">
+      <div class="pcard pcard-purple">
+        <div class="pcat">Champú Suave</div>
+        <div class="pname">Champú Reparador Nutritivo</div>
+        <div class="pbrand">Uso Frecuente / Sin Sulfatos</div>
+        <div class="putil">Limpia suavemente el cuero cabelludo respetando los aceites naturales del pelo.</div>
+      </div>
+
+      <div class="pcard pcard-sky">
+        <div class="pcat">Acondicionador / Mascarilla</div>
+        <div class="pname">Mascarilla de Hidratación Profunda</div>
+        <div class="pbrand">Uso 2-3 veces por semana</div>
+        <div class="putil">Recupera la hidratación de medios a puntas y facilita el desenredo inmediato.</div>
+      </div>
+
+      <div class="pcard pcard-amber">
+        <div class="pcat">Protección Térmica</div>
+        <div class="pname">Spray Termoprotector & Leave-in</div>
+        <div class="pbrand">Uso previo al secado</div>
+        <div class="putil">Protege hasta 230°C contra el secador y la plancha, previniendo puntas abiertas.</div>
+      </div>
+
+      <div class="pcard pcard-amber">
+        <div class="pcat">Acabado / Puntas</div>
+        <div class="pname">Aceite Capilar de Argán / Jojoba</div>
+        <div class="pbrand">Toque final diario</div>
+        <div class="putil">Aporta brillo instantáneo, suavidad y protege contra la humedad ambiental.</div>
+      </div>
+    </div>
+  </div><!-- /t-hair -->
+
+  <!-- ══════════════════════════════════════
+        PRODUCTS (DERMATOLÓGICOS Y FACIALES)
   ══════════════════════════════════════ -->
   <div class="panel" id="t-products">
-    <div class="slabel">Inventario Activo de Productos</div>
+    <div class="slabel">Productos de la Rutina Dermatológica</div>
     <div class="pgrid">
-      <div class="pcard pcard-purple"><div class="pcat">Sérum Antimanchas — Mañana</div><div class="pname">Niacinamide 10% + Zinc 1%</div><div class="pbrand">The Ordinary · 30 ml</div><div class="putil"><b>Para qué:</b> Excelente seborregulador y unificador del tono. Acelera el borrado de marcas rojas PIE sin interferir con el Epiduo.</div></div>
-      <div class="pcard pcard-sky"><div class="pcat">Mascarilla Calmante — 1-2x Semana</div><div class="pname">Masque Apaisant Hydratant</div><div class="pbrand">Avène · 50 ml Tubo</div><div class="putil"><b>Para qué:</b> Baño de hidratación y alivio intensivo para pieles sensibilizadas por tratamientos médicos retinoideos.</div></div>
-      <div class="pcard pcard-sky"><div class="pcat">Bruma Calmante — Diario</div><div class="pname">Agua Termal</div><div class="pbrand">Avène / La Roche-Posay</div><div class="putil"><b>Para qué:</b> Desinflama, refresca y retira la mascarilla suavemente sin necesidad de enjuagar con agua del grifo.</div></div>
-      <div class="pcard pcard-rose"><div class="pcat">Medicamento Tópico — Noche</div><div class="pname">Epiduo Gel</div><div class="pbrand">Adapaleno 0.1% + Peróxido de Benzoilo 2.5%</div><div class="putil"><b>Para qué:</b> Tratamiento central de prescripción. Desobstruye poros, elimina la bacteria del acné y renueva activamente la piel.</div></div>
-      <div class="pcard pcard-rose"><div class="pcat">Medicamento Oral — Diario</div><div class="pname">Tetralysal (Limeciclina)</div><div class="pbrand">Antibiótico Recetado</div><div class="putil"><b>Para qué:</b> Controla la carga bacteriana e inflamatoria desde el interior del organismo.</div></div>
-      <div class="pcard"><div class="pcat">Crema Hidratante — AM / PM</div><div class="pname">Effaclar H Iso-Biome</div><div class="pbrand">La Roche-Posay · 40 ml</div><div class="putil"><b>Para qué:</b> Restaura la humedad esencial y repara los lípidos sin engrasar. Ideal para combatir la sequedad del Epiduo.</div></div>
-      <div class="pcard"><div class="pcat">Protector Solar — AM Obligatorio</div><div class="pname">Anthelios UVMune 400 Oil Control</div><div class="pbrand">La Roche-Posay · SPF 50+</div><div class="putil"><b>Para qué:</b> Filtro solar matificante toque seco. Previene la fijación de pigmentos oscuros o cicatrices rojas.</div></div>
-      <div class="pcard pcard-amber"><div class="pcat">Maquillaje Cobertura — Lun, Mié, Vie</div><div class="pname">Double Wear Stay-in-Place</div><div class="pbrand">Estée Lauder · 30 ml</div><div class="putil"><b>Para qué:</b> Cobertura impecable para días específicos. Oil-free y no comedogénica, ideal para usar sobre el solar.</div></div>
-      <div class="pcard"><div class="pcat">Desmaquillante — PM Paso 1</div><div class="pname">Agua Micelar Sensibio / LRP</div><div class="pbrand">Bioderma o La Roche-Posay</div><div class="putil"><b>Para qué:</b> Disuelve maquillaje o protector solar resistente al agua antes del lavado de noche.</div></div>
-      <div class="pcard"><div class="pcat">Bálsamo SOS — Rescate</div><div class="pname">Cicaplast Baume B5+</div><div class="pbrand">La Roche-Posay</div><div class="putil"><b>Para qué:</b> Bálsamo reparador extremo para noches de ardor o descamación fuerte. Suspendes Epiduo y usas Cicaplast.</div></div>
+      <div class="pcard pcard-rose">
+        <div class="pcat">Medicamento PM</div>
+        <div class="pname">Epiduo Gel</div>
+        <div class="pbrand">Adapaleno 0.1% + Peróxido de Benzoilo 2.5%</div>
+        <div class="putil">Tratamiento médico nocturno para el acné, poros obstruidos y renovación celular.</div>
+      </div>
+
+      <div class="pcard pcard-purple">
+        <div class="pcat">Sérum AM</div>
+        <div class="pname">Niacinamide 10% + Zinc 1%</div>
+        <div class="pbrand">The Ordinary</div>
+        <div class="putil">Regula el sebo, minimiza poros y ayuda a atenuar hiper-pigmentaciones o marcas.</div>
+      </div>
+
+      <div class="pcard pcard-sky">
+        <div class="pcat">Crema Reparadora</div>
+        <div class="pname">Effaclar H Iso-Biome</div>
+        <div class="pbrand">La Roche-Posay</div>
+        <div class="putil">Hidratante que calma la piel debilitada por tratamientos de acné desiccantes.</div>
+      </div>
+
+      <div class="pcard pcard-amber">
+        <div class="pcat">Protector Solar</div>
+        <div class="pname">Anthelios UVMune 400 Oil Control</div>
+        <div class="pbrand">La Roche-Posay (SPF 50+)</div>
+        <div class="putil">Alta protección toque seco que previene manchas producidas por la radiación UV.</div>
+      </div>
+
+      <div class="pcard pcard-amber">
+        <div class="pcat">Maquillaje</div>
+        <div class="pname">Double Wear Stay-in-Place</div>
+        <div class="pbrand">Estée Lauder</div>
+        <div class="putil">Base de alta cobertura oil-free, ideal para días de evento o trabajo.</div>
+      </div>
+
+      <div class="pcard pcard-sky">
+        <div class="pcat">Mascarilla Calmante</div>
+        <div class="pname">Masque Apaisant Hydratant</div>
+        <div class="pbrand">Avène</div>
+        <div class="putil">Brazada de alivio e hidratación profunda para restaurar la barrera el domingo.</div>
+      </div>
     </div>
-  </div>
+  </div><!-- /t-products -->
 
   <!-- ══════════════════════════════════════
         RULES
   ══════════════════════════════════════ -->
   <div class="panel" id="t-rules">
-    <div class="slabel">Reglas Dermatológicas de Optimización</div>
-    <div class="callout callout-sage"><b>Beneficio de alternar días sin base:</b><br>Darle 4 días a la semana de descanso de maquillaje a tu piel le permite respirar mejor, oxigenar los poros y acelerar el proceso de renovación del Epiduo.</div>
-    <div class="callout callout-sky"><b>Uso Correcto de la Mascarilla Avène Masque Apaisant:</b><br>
-      • Aplica una capa gruesa por 10-15 minutos.<br>
-      • Retira el exceso suavemente con un disco de algodón impregnado en Agua Termal.<br>
-      • <b>No enjuagues con agua de la llave/grifo</b> para mantener los nutrientes y el efecto filmógeno en tu piel.
+    <div class="slabel">Reglas Dermatológicas Fundamentales</div>
+    
+    <div class="callout callout-sage" style="margin-bottom: 12px;">
+      <b>1. Espera de 10 Minutos con Epiduo:</b> Nunca apliques Epiduo inmediatamente después de lavar la cara o poner hidratante sobre la piel húmeda. La piel debe estar completamente seca para evitar irritación extrema.
     </div>
-    <div class="callout"><b>Retirado de Bloqueador en días sin base:</b> Aunque no uses la base Double Wear los martes, jueves, sábados y domingos, <b>el protector solar Anthelios UVMune también requiere agua micelar por la noche</b> para remover por completo los filtros resistentes al agua.</div>
-    <div class="callout"><b>Uso correcto de The Ordinary Niacinamide:</b> Usa solo 2 a 3 gotas. Te mantendrá el rostro matificado en el día y acelerará la desaparición de las marcas rojas (PIE) o cafés (PIH).</div>
-    <div class="alert"><b>Regla de Oro con Epiduo Gel:</b> Usa estrictamente la cantidad equivalente a <b>1 grano de arroz</b> para todo el rostro. Colocar más producto no curará más rápido el acné, solo causará quemadura, descamación y rojez.</div>
-  </div>
 
-</div>
+    <div class="callout callout-sky" style="margin-bottom: 12px;">
+      <b>2. Regla de la Cantidad:</b> Una cantidad equivalente a <i>un grano de arroz</i> es suficiente para todo el rostro. Aplicar más producto no acelerará el resultado y aumentará la descamación.
+    </div>
 
+    <div class="alert" style="margin-bottom: 12px;">
+      <b>3. Cuidado con la Ropa de Cama:</b> El Peróxido de Benzoilo presente en Epiduo puede decolorar toallas y sábanas oscuras. Se recomienda usar almohadas y toallas blancas.
+    </div>
+
+    <div class="callout callout-purple">
+      <b>4. Constancia con la Niacinamida:</b> Se utiliza diariamente en las mañanas para mantener bajo control la producción de grasa y restaurar la barrera junto con la crema Effaclar H.
+    </div>
+  </div><!-- /t-rules -->
+
+</div><!-- /page -->
+
+<!-- ══════════════════════════════════════
+      JAVASCRIPT DE INTERACCIÓN
+══════════════════════════════════════ -->
 <script>
-function showTab(tabId, el) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
-  el.classList.add('on');
-  document.getElementById('t-' + tabId).classList.add('on');
+function showTab(tabId, btn) {
+  // Desactivar todas las pestañas
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => t.classList.remove('on'));
+  
+  // Ocultar todos los paneles
+  const panels = document.querySelectorAll('.panel');
+  panels.forEach(p => p.classList.remove('on'));
+  
+  // Activar la pestaña y el panel seleccionado
+  btn.classList.add('on');
+  const targetPanel = document.getElementById('t-' + tabId);
+  if (targetPanel) {
+    targetPanel.classList.add('on');
+  }
 }
 
-function showDay(dayId, el) {
-  document.querySelectorAll('.dbtn').forEach(b => b.classList.remove('on'));
-  document.querySelectorAll('.dcontent').forEach(c => c.classList.remove('on'));
-  el.classList.add('on');
-  document.getElementById('d-' + dayId).classList.add('on');
+function showDay(dayId, btn) {
+  // Desactivar todos los botones de día
+  const dbtns = document.querySelectorAll('.dbtn');
+  dbtns.forEach(b => b.classList.remove('on'));
+  
+  // Ocultar todos los contenidos de día
+  const dcontents = document.querySelectorAll('.dcontent');
+  dcontents.forEach(c => c.classList.remove('on'));
+  
+  // Activar el botón y contenido seleccionado
+  btn.classList.add('on');
+  const targetContent = document.getElementById('d-' + dayId);
+  if (targetContent) {
+    targetContent.classList.add('on');
+  }
 }
 </script>
 </body>
