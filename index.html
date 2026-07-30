@@ -12,14 +12,14 @@
 
 :root {
   /* Neutros */
-  --bg:      #ffffff;
-  --soft:    #f6f7f7;
-  --soft2:   #eef0ef;
-  --ink:     #14181a;
-  --muted:   #6f7680;
-  --faint:   #a6acb3;
-  --line:    #ececec;
-  --line2:   #e1e3e5;
+  --bg:       #ffffff;
+  --soft:     #f6f7f7;
+  --soft2:    #eef0ef;
+  --ink:      #14181a;
+  --muted:    #6f7680;
+  --faint:    #a6acb3;
+  --line:     #ececec;
+  --line2:    #e1e3e5;
 
   /* Verde / AM — Protección e Hidratación */
   --sage:     #0d8a4f;
@@ -37,6 +37,12 @@
   --purple:    #6b21a8;
   --purple-lt: #f3e8ff;
   --purple-brd:#e9d5ff;
+
+  /* Celeste / Mascarilla & Calma (Avène) */
+  --sky:       #0284c7;
+  --sky-lt:    #e0f2fe;
+  --sky-md:    #bae6fd;
+  --sky-brd:   #7dd3fc;
 
   /* Ámbar — Maquillaje / Protección */
   --amber:     #9e6000;
@@ -144,6 +150,7 @@ h1 em { font-style: normal; color: var(--indigo); }
 }
 .spill-am   { background: var(--sage-lt);   color: var(--sage);   border: 1px solid var(--sage-brd); }
 .spill-pm   { background: var(--indigo-lt); color: var(--indigo); border: 1px solid var(--indigo-brd); }
+.spill-sky  { background: var(--sky-lt);    color: var(--sky);    border: 1px solid var(--sky-brd); }
 .spill-rest { background: var(--slate-lt);  color: var(--slate);  border: 1px solid var(--slate-brd); }
 .ssub { font-size: 12px; color: var(--faint); }
 
@@ -174,6 +181,7 @@ h1 em { font-style: normal; color: var(--indigo); }
 }
 .num-am   { background: var(--sage-md);   color: var(--sage); }
 .num-pm   { background: var(--indigo-md); color: var(--indigo); }
+.num-sky  { background: var(--sky-md);    color: var(--sky); }
 .num-rest { background: var(--slate-lt);  color: var(--slate); border: 1px solid var(--slate-brd); }
 .num-med  { background: var(--rose-lt);    color: var(--rose); border: 1px solid var(--rose-brd); }
 
@@ -191,6 +199,7 @@ h1 em { font-style: normal; color: var(--indigo); }
 }
 .util-sage   em { color: var(--sage); }
 .util-indigo em { color: var(--indigo); }
+.util-sky    em { color: var(--sky); }
 .util-amber  em { color: var(--amber); }
 .util-rose   em { color: var(--rose); }
 .util-purple em { color: var(--purple); }
@@ -199,6 +208,7 @@ h1 em { font-style: normal; color: var(--indigo); }
 .tag { padding: 2px 9px; border-radius: var(--pill); font-size: 9.5px; font-weight: 600; border: 1px solid; }
 .tag-sage   { background: var(--sage-lt);   color: var(--sage);   border-color: var(--sage-brd); }
 .tag-indigo { background: var(--indigo-lt); color: var(--indigo); border-color: var(--indigo-brd); }
+.tag-sky    { background: var(--sky-lt);    color: var(--sky);    border-color: var(--sky-brd); }
 .tag-amber  { background: var(--amber-lt);  color: var(--amber);  border-color: var(--amber-brd); }
 .tag-rose   { background: var(--rose-lt);   color: var(--rose);   border-color: var(--rose-brd); }
 .tag-purple { background: var(--purple-lt); color: var(--purple); border-color: var(--purple-brd); }
@@ -211,8 +221,11 @@ h1 em { font-style: normal; color: var(--indigo); }
   padding: 14px 16px; font-size: 12.5px; color: var(--muted); line-height: 1.65; margin-top: 10px;
 }
 .callout b { color: var(--ink); font-weight: 700; }
-.callout-sage  { background: var(--sage-lt);  border-color: var(--sage-brd);  color: #2c6b48; }
+.callout-sage   { background: var(--sage-lt);  border-color: var(--sage-brd);  color: #2c6b48; }
 .callout-sage b { color: var(--sage); }
+.callout-sky    { background: var(--sky-lt);   border-color: var(--sky-brd);   color: #0369a1; }
+.callout-sky b  { color: var(--sky); }
+
 .alert {
   background: var(--rose-lt); border: 1px solid var(--rose-brd); border-radius: var(--r);
   padding: 14px 16px; font-size: 12.5px; color: var(--rose); line-height: 1.7; margin-top: 10px;
@@ -232,6 +245,7 @@ h1 em { font-style: normal; color: var(--indigo); }
 .wt-purple { background: var(--purple-lt); color: var(--purple); }
 .wt-amber  { background: var(--amber-lt);  color: var(--amber); }
 .wt-pm     { background: var(--indigo-lt); color: var(--indigo); }
+.wt-sky    { background: var(--sky-lt);    color: var(--sky); }
 .wt-rest   { background: var(--slate-lt);  color: var(--slate); }
 
 .wlegend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
@@ -241,6 +255,7 @@ h1 em { font-style: normal; color: var(--indigo); }
 .wleg-dot.purple { background: var(--purple); }
 .wleg-dot.amber  { background: var(--amber); }
 .wleg-dot.pm     { background: var(--indigo); }
+.wleg-dot.sky    { background: var(--sky); }
 .wleg-dot.rest   { background: var(--slate); }
 
 /* ── PRODUCTS ── */
@@ -253,6 +268,8 @@ h1 em { font-style: normal; color: var(--indigo); }
 .pcard-rose   .pcat { color: var(--rose); }
 .pcard-purple { border-color: var(--purple-brd); background: var(--purple-lt); }
 .pcard-purple .pcat { color: var(--purple); }
+.pcard-sky    { border-color: var(--sky-brd);    background: var(--sky-lt); }
+.pcard-sky    .pcat { color: var(--sky); }
 
 .pcat { font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px; }
 .pname { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 3px; line-height: 1.25; }
@@ -288,6 +305,7 @@ h1 em { font-style: normal; color: var(--indigo); }
       <span class="htag">Epiduo Gel (Adapaleno + BPO)</span>
       <span class="htag">Tetralysal Oral</span>
       <span class="htag">The Ordinary Niacinamide 10%</span>
+      <span class="htag">Avène Masque Apaisant</span>
       <span class="htag">Base 3 Días a la Semana</span>
     </div>
   </div>
@@ -301,12 +319,13 @@ h1 em { font-style: normal; color: var(--indigo); }
   </div>
 
   <!-- ══════════════════════════════════════
-       DAILY
+        DAILY
   ══════════════════════════════════════ -->
   <div class="panel on" id="t-daily">
     <div class="day-nav">
       <button class="dbtn on" onclick="showDay('con-base',this)">Lunes, Miércoles y Viernes (Con Base)</button>
-      <button class="dbtn" onclick="showDay('sin-base',this)">Martes, Jueves, Sáb y Dom (Sin Base)</button>
+      <button class="dbtn" onclick="showDay('sin-base',this)">Martes, Jueves y Sábado (Sin Base)</button>
+      <button class="dbtn" onclick="showDay('spa-mask',this)">Domingo (Noche Spa & Mascarilla Avène)</button>
     </div>
 
     <!-- ── OPCIÓN A: LUNES, MIÉRCOLES Y VIERNES (CON BASE) ── -->
@@ -421,7 +440,7 @@ h1 em { font-style: normal; color: var(--indigo); }
       </div>
     </div>
 
-    <!-- ── OPCIÓN B: MARTES, JUEVES, SÁBADO Y DOMINGO (SIN BASE) ── -->
+    <!-- ── OPCIÓN B: MARTES, JUEVES Y SÁBADO (SIN BASE) ── -->
     <div class="dcontent" id="d-sin-base">
       <div class="session">
         <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Piel al natural · Limpieza · Niacinamida 10% · Effaclar H · Protector Solar</span></div>
@@ -522,10 +541,111 @@ h1 em { font-style: normal; color: var(--indigo); }
         </div>
       </div>
     </div>
+
+    <!-- ── OPCIÓN C: DOMINGO (NOCHE SPA & MASCARILLA AVÈNE) ── -->
+    <div class="dcontent" id="d-spa-mask">
+      <div class="session">
+        <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Piel al natural · Limpieza · Niacinamida 10% · Effaclar H · Protector Solar</span></div>
+        <div class="steps">
+          <div class="steps-header">
+            <div></div>
+            <div class="col-label">Paso / Producto</div>
+            <div class="col-label utility">Objetivo principal</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">1</div>
+            <div class="step-main">
+              <div class="sname">Limpieza Suave + Agua Termal</div>
+              <div class="sprod">Limpiador Syndet + Bruma Agua Termal Avène</div>
+              <div class="snote">Lavar cara y aplicar bruma para desinflamar.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Calma Inmediata</em>Restaura minerales y descongestiona la piel.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">2</div>
+            <div class="step-main">
+              <div class="sname">Sérum Antimanchas & Sebo</div>
+              <div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div>
+              <div class="snote">2 a 3 gotas en todo el rostro.</div>
+            </div>
+            <div class="step-utility util-purple"><em>Tratamiento Continuo</em>Mantiene el control de grasa y marcas.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">3</div>
+            <div class="step-main">
+              <div class="sname">Hidratante + Protector Solar</div>
+              <div class="sprod">Effaclar H + Anthelios UVMune 400 SPF 50+</div>
+              <div class="snote">Capa protectora para pasar el día descansado sin maquillaje.</div>
+            </div>
+            <div class="step-utility util-amber"><em>Escudo Diario</em>Blindaje completo contra luz solar e irritación.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="session">
+        <div class="sess-head"><span class="spill spill-sky">PM — Noche Spa & Recuperación Intensiva</span><span class="ssub">Doble Limpieza · Mascarilla Avène · Effaclar H · (Epiduo u Opción Descanso)</span></div>
+        <div class="steps">
+          <div class="steps-header">
+            <div></div>
+            <div class="col-label">Paso / Producto</div>
+            <div class="col-label utility">Objetivo principal</div>
+          </div>
+          <div class="step">
+            <div class="num num-sky">1</div>
+            <div class="step-main">
+              <div class="sname">Doble Limpieza Completa</div>
+              <div class="sprod">Agua Micelar + Limpiador Suave</div>
+              <div class="snote">Retirar solar y residuos del día. Secar suavemente con toalla limpia a toques.</div>
+            </div>
+            <div class="step-utility util-sky"><em>Preparación Limpia</em>Deja los poros limpios para recibir la nutrición.</div>
+          </div>
+          <div class="step">
+            <div class="num num-sky">2</div>
+            <div class="step-main">
+              <div class="sname">Mascarilla Calmante Hydratant</div>
+              <div class="sprod">Avène Masque Apaisant Hydratant</div>
+              <div class="snote"><strong>Capa gruesa y generosa</strong> (que se vea blanca). Dejar actuar de <strong>10 a 15 minutos</strong>.</div>
+              <div class="tags"><span class="tag tag-sky">Top Calmante</span><span class="tag tag-sky">Baño de Nutrición</span></div>
+            </div>
+            <div class="step-utility util-sky"><em>Recuperación Intensiva</em>Satura la piel de agua e ingredientes calmantes para revertir la resequedad.</div>
+          </div>
+          <div class="step">
+            <div class="num num-sky">3</div>
+            <div class="step-main">
+              <div class="sname">Retiro Suave con Agua Termal</div>
+              <div class="sprod">Agua Termal Avène + Disco de Algodón</div>
+              <div class="snote">Retirar el exceso con algodón humedecido en Agua Termal. <strong>NO enjuagar con agua de grifo.</strong></div>
+            </div>
+            <div class="step-utility util-sky"><em>Efecto Escudo</em>Mantiene el film protector de la mascarilla sobre la barrera cutánea.</div>
+          </div>
+          <div class="step">
+            <div class="num num-sky">4</div>
+            <div class="step-main">
+              <div class="sname">Sellado e Hidratación</div>
+              <div class="sprod">La Roche-Posay Effaclar H Iso-Biome</div>
+              <div class="snote">Aplica tu capa normal de crema para sellar toda la hidratación absorbida.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Cierre de Humedad</em>Bloquea los activos calmantes en las capas profundas.</div>
+          </div>
+          <div class="step">
+            <div class="num num-med">5</div>
+            <div class="step-main">
+              <div class="sname">Tratamiento Médico (Opcional / Evaluación)</div>
+              <div class="sprod">Epiduo Gel (1 grano de arroz) ó Noche de Descanso</div>
+              <div class="snote">Si sientes la piel resistente, aplica Epiduo 15 min después. Si sientes tirantez o rojez, omite Epiduo esta noche.</div>
+              <div class="tags"><span class="tag tag-rose">Según sensibilidad</span></div>
+            </div>
+            <div class="step-utility util-rose"><em>Adaptabilidad</em>Permite un "reboot" o descanso cutáneo si la piel lo necesita.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div><!-- /t-daily -->
 
   <!-- ══════════════════════════════════════
-       WEEKLY
+        WEEKLY
   ══════════════════════════════════════ -->
   <div class="panel" id="t-weekly">
     <div class="slabel">Distribución Semanal de Maquillaje y Tratamiento</div>
@@ -587,7 +707,7 @@ h1 em { font-style: normal; color: var(--indigo); }
           <div class="wt wt-am">Effaclar + SPF</div>
           <div class="wt wt-rest">Sin Base</div>
           <div class="wt wt-pm">Doble Limp.</div>
-          <div class="wt wt-rest">SOS Cicaplast*</div>
+          <div class="wt wt-pm">EPIDUO / SOS</div>
         </div>
       </div>
       <div class="wday">
@@ -596,8 +716,8 @@ h1 em { font-style: normal; color: var(--indigo); }
           <div class="wt wt-purple">Niacinamida</div>
           <div class="wt wt-am">Effaclar + SPF</div>
           <div class="wt wt-rest">Sin Base</div>
-          <div class="wt wt-pm">Doble Limp.</div>
-          <div class="wt wt-pm">EPIDUO</div>
+          <div class="wt wt-sky">Mascarilla Avène</div>
+          <div class="wt wt-pm">Epiduo / Relax</div>
         </div>
       </div>
     </div>
@@ -606,6 +726,7 @@ h1 em { font-style: normal; color: var(--indigo); }
       <div class="wleg"><div class="wleg-dot amber"></div>Días de Base (Lun, Mié, Vie)</div>
       <div class="wleg"><div class="wleg-dot rest"></div>Días Sin Base (Mar, Jue, Sáb, Dom)</div>
       <div class="wleg"><div class="wleg-dot pm"></div>Epiduo Gel (PM)</div>
+      <div class="wleg"><div class="wleg-dot sky"></div>Mascarilla Avène Spa (Dom PM)</div>
     </div>
     <div class="callout callout-sage" style="margin-top:16px">
       <b>Medicamento Oral:</b> Recuerda tomar tu cápsula de <b>Tetralysal</b> todos los días con el desayuno o almuerzo.
@@ -613,46 +734,55 @@ h1 em { font-style: normal; color: var(--indigo); }
   </div>
 
   <!-- ══════════════════════════════════════
-       PRODUCTS
+        PRODUCTS
   ══════════════════════════════════════ -->
   <div class="panel" id="t-products">
     <div class="slabel">Inventario Activo de Productos</div>
     <div class="pgrid">
-      <div class="pcard pcard-purple"><div class="pcat">Sérum Antimanchas — Mañana</div><div class="pname">Niacinamide 10% + Zinc 1%</div><div class="pbrand">The Ordinary · 30 ml</div><div class="putil"><b>Para qué:</b> Excelente seborregulador y unificador del tono. Al aplicarlo de mañana en tu piel resistente, acelera el borrado de marcas rojas sin interferir con el Epiduo.</div></div>
-      <div class="pcard pcard-rose"><div class="pcat">Medicamento Tópico — Noche</div><div class="pname">Epiduo Gel</div><div class="pbrand">Adapaleno 0.1% + Peróxido de Benzoilo 2.5%</div><div class="putil"><b>Para qué:</b> El tratamiento central de prescripción médica. Desobstruye poros, elimina la bacteria del acné y renueva activamente la piel.</div></div>
+      <div class="pcard pcard-purple"><div class="pcat">Sérum Antimanchas — Mañana</div><div class="pname">Niacinamide 10% + Zinc 1%</div><div class="pbrand">The Ordinary · 30 ml</div><div class="putil"><b>Para qué:</b> Excelente seborregulador y unificador del tono. Acelera el borrado de marcas rojas PIE sin interferir con el Epiduo.</div></div>
+      <div class="pcard pcard-sky"><div class="pcat">Mascarilla Calmante — 1-2x Semana</div><div class="pname">Masque Apaisant Hydratant</div><div class="pbrand">Avène · 50 ml Tubo</div><div class="putil"><b>Para qué:</b> Baño de hidratación y alivio intensivo para pieles sensibilizadas por tratamientos médicos retinoideos.</div></div>
+      <div class="pcard pcard-sky"><div class="pcat">Bruma Calmante — Diario</div><div class="pname">Agua Termal</div><div class="pbrand">Avène / La Roche-Posay</div><div class="putil"><b>Para qué:</b> Desinflama, refresca y retira la mascarilla suavemente sin necesidad de enjuagar con agua del grifo.</div></div>
+      <div class="pcard pcard-rose"><div class="pcat">Medicamento Tópico — Noche</div><div class="pname">Epiduo Gel</div><div class="pbrand">Adapaleno 0.1% + Peróxido de Benzoilo 2.5%</div><div class="putil"><b>Para qué:</b> Tratamiento central de prescripción. Desobstruye poros, elimina la bacteria del acné y renueva activamente la piel.</div></div>
       <div class="pcard pcard-rose"><div class="pcat">Medicamento Oral — Diario</div><div class="pname">Tetralysal (Limeciclina)</div><div class="pbrand">Antibiótico Recetado</div><div class="putil"><b>Para qué:</b> Controla la carga bacteriana e inflamatoria desde el interior del organismo.</div></div>
       <div class="pcard"><div class="pcat">Crema Hidratante — AM / PM</div><div class="pname">Effaclar H Iso-Biome</div><div class="pbrand">La Roche-Posay · 40 ml</div><div class="putil"><b>Para qué:</b> Restaura la humedad esencial y repara los lípidos sin engrasar. Ideal para combatir la sequedad del Epiduo.</div></div>
       <div class="pcard"><div class="pcat">Protector Solar — AM Obligatorio</div><div class="pname">Anthelios UVMune 400 Oil Control</div><div class="pbrand">La Roche-Posay · SPF 50+</div><div class="putil"><b>Para qué:</b> Filtro solar matificante toque seco. Previene la fijación de pigmentos oscuros o cicatrices rojas.</div></div>
       <div class="pcard pcard-amber"><div class="pcat">Maquillaje Cobertura — Lun, Mié, Vie</div><div class="pname">Double Wear Stay-in-Place</div><div class="pbrand">Estée Lauder · 30 ml</div><div class="putil"><b>Para qué:</b> Cobertura impecable para días específicos. Oil-free y no comedogénica, ideal para usar sobre el solar.</div></div>
       <div class="pcard"><div class="pcat">Desmaquillante — PM Paso 1</div><div class="pname">Agua Micelar Sensibio / LRP</div><div class="pbrand">Bioderma o La Roche-Posay</div><div class="putil"><b>Para qué:</b> Disuelve maquillaje o protector solar resistente al agua antes del lavado de noche.</div></div>
+      <div class="pcard"><div class="pcat">Bálsamo SOS — Rescate</div><div class="pname">Cicaplast Baume B5+</div><div class="pbrand">La Roche-Posay</div><div class="putil"><b>Para qué:</b> Bálsamo reparador extremo para noches de ardor o descamación fuerte. Suspendes Epiduo y usas Cicaplast.</div></div>
     </div>
   </div>
 
   <!-- ══════════════════════════════════════
-       RULES
+        RULES
   ══════════════════════════════════════ -->
   <div class="panel" id="t-rules">
     <div class="slabel">Reglas Dermatológicas de Optimización</div>
     <div class="callout callout-sage"><b>Beneficio de alternar días sin base:</b><br>Darle 4 días a la semana de descanso de maquillaje a tu piel le permite respirar mejor, oxigenar los poros y acelerar el proceso de renovación del Epiduo.</div>
-    <div class="callout"><b>Retirado de Bloqueador en días sin base:</b> Aunque no uses la base Double Wear los martes, jueves, sábados y domingos, **el protector solar Anthelios UVMune también requiere agua micelar por la noche** para remover por completo los filtros resistentes al agua.</div>
-    <div class="callout"><b>Uso correcto de The Ordinary Niacinamide:</b> Usa solo 2 a 3 gotas. Te mantendrá el rostro matificado todo el día, tanto los días que usas maquillaje como los días al natural.</div>
-    <div class="alert"><b>¡MANTÉN LOS ÁCIDOS EXFOLIANTES Y OTROS RETINOLES FUERA!</b><br>Aunque tu piel no se irrite, la combinación de Epiduo nocturno + Niacinamida matutina ya le da a tu piel toda la fuerza necesaria sin necesidad de agregar exfoliantes químicos extras.</div>
+    <div class="callout callout-sky"><b>Uso Correcto de la Mascarilla Avène Masque Apaisant:</b><br>
+      • Aplica una capa gruesa por 10-15 minutos.<br>
+      • Retira el exceso suavemente con un disco de algodón impregnado en Agua Termal.<br>
+      • <b>No enjuagues con agua de la llave/grifo</b> para mantener los nutrientes y el efecto filmógeno en tu piel.
+    </div>
+    <div class="callout"><b>Retirado de Bloqueador en días sin base:</b> Aunque no uses la base Double Wear los martes, jueves, sábados y domingos, <b>el protector solar Anthelios UVMune también requiere agua micelar por la noche</b> para remover por completo los filtros resistentes al agua.</div>
+    <div class="callout"><b>Uso correcto de The Ordinary Niacinamide:</b> Usa solo 2 a 3 gotas. Te mantendrá el rostro matificado en el día y acelerará la desaparición de las marcas rojas (PIE) o cafés (PIH).</div>
+    <div class="alert"><b>Regla de Oro con Epiduo Gel:</b> Usa estrictamente la cantidad equivalente a <b>1 grano de arroz</b> para todo el rostro. Colocar más producto no curará más rápido el acné, solo causará quemadura, descamación y rojez.</div>
   </div>
 
-</div><!-- /page -->
+</div>
 
 <script>
-function showTab(id, btn) {
+function showTab(tabId, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
-  document.querySelectorAll('.tab').forEach(b => b.classList.remove('on'));
-  document.getElementById('t-' + id).classList.add('on');
-  btn.classList.add('on');
+  el.classList.add('on');
+  document.getElementById('t-' + tabId).classList.add('on');
 }
-function showDay(id, btn) {
-  document.querySelectorAll('.dcontent').forEach(d => d.classList.remove('on'));
+
+function showDay(dayId, el) {
   document.querySelectorAll('.dbtn').forEach(b => b.classList.remove('on'));
-  document.getElementById('d-' + id).classList.add('on');
-  btn.classList.add('on');
+  document.querySelectorAll('.dcontent').forEach(c => c.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('d-' + dayId).classList.add('on');
 }
 </script>
 </body>
