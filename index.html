@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Sistema Isidora — Horario y Hábitos</title>
+<title>Rutina Dermatológica — Piel Resistente & Calendario de Maquillaje</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,6 +11,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  /* Neutros */
   --bg:      #ffffff;
   --soft:    #f6f7f7;
   --soft2:   #eef0ef;
@@ -20,27 +21,37 @@
   --line:    #ececec;
   --line2:   #e1e3e5;
 
-  --sage:     #12a75e;
+  /* Verde / AM — Protección e Hidratación */
+  --sage:     #0d8a4f;
   --sage-lt:  #e9f7ef;
   --sage-md:  #c6ecd7;
   --sage-brd: #bfe6cf;
 
-  --indigo:    #3b4fb0;
+  /* Azul / PM — Tratamiento Médico (Epiduo) */
+  --indigo:    #2d3e91;
   --indigo-lt: #eef0fb;
+  --indigo-md: #d8def0;
   --indigo-brd:#c6cef0;
 
-  --amber:     #a86a08;
+  /* Violeta / Activos Concentrados (Niacinamida) */
+  --purple:    #6b21a8;
+  --purple-lt: #f3e8ff;
+  --purple-brd:#e9d5ff;
+
+  /* Ámbar — Maquillaje / Protección */
+  --amber:     #9e6000;
   --amber-lt:  #fdf3e1;
   --amber-brd: #f0d49a;
 
-  --slate:     #566875;
+  /* Rosa / Rojo — Advertencias / Medicamentos */
+  --rose:     #d6324a;
+  --rose-lt:  #fdeef0;
+  --rose-brd: #f3c3ca;
+
+  /* Pizarra — Rescate / Descanso */
+  --slate:     #4a5c68;
   --slate-lt:  #eef2f5;
   --slate-brd: #d3dde3;
-
-  --teal:     #0d9488;
-  --teal-lt:  #e6f6f4;
-  --teal-md:  #c4eae6;
-  --teal-brd: #aee0da;
 
   --r:    18px;
   --r-sm: 12px;
@@ -48,6 +59,7 @@
 }
 
 html { font-size: 15px; -webkit-text-size-adjust: 100%; }
+
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   background: var(--bg);
@@ -56,33 +68,51 @@ body {
   min-height: 100vh;
   -webkit-tap-highlight-color: transparent;
 }
+
 h1, h2, h3 { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
 
-.page { max-width: 900px; margin: 0 auto; padding: 2.25rem 1.1rem 5rem; }
+/* ── PAGE ── */
+.page { max-width: 820px; margin: 0 auto; padding: 2.25rem 1.1rem 5rem; }
 @media (min-width: 640px){ .page { padding: 3rem 2rem 6rem; } }
 
+/* ── HEADER ── */
 .header { margin-bottom: 2rem; }
+
 .header-badge {
   display: inline-flex; align-items: center; gap: 7px;
-  background: var(--sage-lt); border: 1px solid var(--sage-brd);
-  border-radius: var(--pill); padding: 5px 14px;
+  background: var(--sage-lt);
+  border: 1px solid var(--sage-brd);
+  border-radius: var(--pill);
+  padding: 5px 14px;
   font-size: 11px; font-weight: 600; color: var(--sage);
   letter-spacing: 0.02em; margin-bottom: 1.1rem;
 }
 .header-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+
 h1 {
-  font-size: 38px; font-weight: 700; line-height: 1.05;
-  color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.6rem;
+  font-size: 40px; font-weight: 700; line-height: 1.05;
+  color: var(--ink); letter-spacing: -0.02em; margin-bottom: 1rem;
 }
 @media (max-width: 600px){ h1 { font-size: 30px; } }
-h1 em { font-style: normal; color: var(--sage); }
-.header p.sub { color: var(--muted); font-size: 13.5px; }
+h1 em { font-style: normal; color: var(--indigo); }
 
-.tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 2rem; }
+.header-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.htag {
+  background: var(--soft); border: 1px solid var(--line);
+  border-radius: var(--pill); padding: 4px 12px;
+  font-size: 11.5px; font-weight: 500; color: var(--muted);
+}
+
+/* ── TABS ── */
+.tabs {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 2rem;
+}
 .tab {
-  padding: 9px 18px; font-size: 13.5px; font-family: inherit; font-weight: 600;
+  padding: 8px 16px; font-size: 13px; font-family: inherit; font-weight: 600;
   border: 1.5px solid var(--line); background: var(--bg); color: var(--muted);
-  border-radius: var(--pill); cursor: pointer; transition: all .15s; white-space: nowrap;
+  border-radius: var(--pill); cursor: pointer;
+  transition: all .15s; white-space: nowrap;
 }
 .tab.on { background: var(--ink); color: #fff; border-color: var(--ink); }
 .tab:hover:not(.on) { border-color: var(--ink); color: var(--ink); }
@@ -91,393 +121,539 @@ h1 em { font-style: normal; color: var(--sage); }
 .panel.on { display: block; animation: fade .35s ease both; }
 @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
+/* ── DAY NAV ── */
 .day-nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.75rem; }
 .dbtn {
   padding: 7px 17px; font-size: 13px; font-family: inherit; font-weight: 600;
   border: 1.5px solid var(--line); border-radius: var(--pill);
   background: var(--bg); color: var(--muted); cursor: pointer; transition: all .15s;
 }
-.dbtn.on { background: var(--sage); color: #fff; border-color: var(--sage); }
-.dbtn:hover:not(.on) { border-color: var(--sage); color: var(--sage); }
+.dbtn.on { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+.dbtn:hover:not(.on) { border-color: var(--indigo); color: var(--indigo); }
 
 .dcontent { display: none; }
 .dcontent.on { display: block; }
 
-.stats-row { display: flex; gap: 10px; margin-bottom: 1.6rem; flex-wrap: wrap; }
-.stat-card {
-  background: var(--soft); border: 1px solid var(--line); border-radius: var(--r);
-  padding: 14px 20px; text-align: left; min-width: 150px; flex: 1;
-}
-.stat-card .num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 30px; font-weight: 700; color: var(--sage); line-height: 1; }
-.stat-card .label { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.03em; margin-top: 4px; }
+/* ── SESSION ── */
+.session { margin-bottom: 1.75rem; }
+.sess-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
 
+.spill {
+  padding: 5px 14px; border-radius: var(--pill);
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.spill-am   { background: var(--sage-lt);   color: var(--sage);   border: 1px solid var(--sage-brd); }
+.spill-pm   { background: var(--indigo-lt); color: var(--indigo); border: 1px solid var(--indigo-brd); }
+.spill-rest { background: var(--slate-lt);  color: var(--slate);  border: 1px solid var(--slate-brd); }
+.ssub { font-size: 12px; color: var(--faint); }
+
+/* ── STEPS TABLE ── */
+.steps {
+  border: 1px solid var(--line); border-radius: var(--r);
+  overflow: hidden; background: var(--surface, #fff);
+}
+.steps-header {
+  display: grid; grid-template-columns: 38px 1fr 160px;
+  background: var(--soft); border-bottom: 1px solid var(--line);
+  padding: 9px 16px; gap: 12px;
+}
+.col-label { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
+.col-label.utility { color: var(--indigo); }
+
+.step {
+  display: grid; grid-template-columns: 38px 1fr 160px; align-items: start;
+  padding: 14px 16px; border-bottom: 1px solid var(--line); gap: 12px; transition: background .12s;
+}
+.step:last-child { border-bottom: none; }
+.step:hover { background: var(--soft); }
+
+.num {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+.num-am   { background: var(--sage-md);   color: var(--sage); }
+.num-pm   { background: var(--indigo-md); color: var(--indigo); }
+.num-rest { background: var(--slate-lt);  color: var(--slate); border: 1px solid var(--slate-brd); }
+.num-med  { background: var(--rose-lt);    color: var(--rose); border: 1px solid var(--rose-brd); }
+
+.sname { font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 1px; }
+.sprod { font-size: 12.5px; font-weight: 500; color: var(--muted); margin-bottom: 3px; }
+.snote { font-size: 11.5px; color: var(--faint); line-height: 1.5; }
+
+.step-utility {
+  font-size: 11.5px; color: var(--muted); line-height: 1.5; padding-top: 1px;
+  border-left: 2px solid var(--line); padding-left: 12px;
+}
+.step-utility em {
+  display: block; font-style: normal; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.03em; margin-bottom: 3px;
+}
+.util-sage   em { color: var(--sage); }
+.util-indigo em { color: var(--indigo); }
+.util-amber  em { color: var(--amber); }
+.util-rose   em { color: var(--rose); }
+.util-purple em { color: var(--purple); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.tag { padding: 2px 9px; border-radius: var(--pill); font-size: 9.5px; font-weight: 600; border: 1px solid; }
+.tag-sage   { background: var(--sage-lt);   color: var(--sage);   border-color: var(--sage-brd); }
+.tag-indigo { background: var(--indigo-lt); color: var(--indigo); border-color: var(--indigo-brd); }
+.tag-amber  { background: var(--amber-lt);  color: var(--amber);  border-color: var(--amber-brd); }
+.tag-rose   { background: var(--rose-lt);   color: var(--rose);   border-color: var(--rose-brd); }
+.tag-purple { background: var(--purple-lt); color: var(--purple); border-color: var(--purple-brd); }
+
+.divider { border: none; border-top: 1px solid var(--line); margin: 1.5rem 0; }
+
+/* ── CALLOUTS ── */
+.callout {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r);
+  padding: 14px 16px; font-size: 12.5px; color: var(--muted); line-height: 1.65; margin-top: 10px;
+}
+.callout b { color: var(--ink); font-weight: 700; }
+.callout-sage  { background: var(--sage-lt);  border-color: var(--sage-brd);  color: #2c6b48; }
+.callout-sage b { color: var(--sage); }
+.alert {
+  background: var(--rose-lt); border: 1px solid var(--rose-brd); border-radius: var(--r);
+  padding: 14px 16px; font-size: 12.5px; color: var(--rose); line-height: 1.7; margin-top: 10px;
+}
+.alert b { color: var(--rose); font-weight: 700; }
+
+/* ── WEEKLY GRID ── */
+.wgrid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 7px; margin-top: 14px; }
+.wday { border: 1px solid var(--line); border-radius: var(--r-sm); overflow: hidden; background: #fff; }
+.wdh {
+  background: var(--ink); color: #fff; text-align: center; padding: 7px 2px;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.wdb { padding: 7px 6px; display: flex; flex-direction: column; gap: 4px; }
+.wt { border-radius: 6px; padding: 3px 6px; font-size: 8.5px; line-height: 1.4; font-weight: 600; }
+.wt-am     { background: var(--sage-lt);   color: var(--sage); }
+.wt-purple { background: var(--purple-lt); color: var(--purple); }
+.wt-amber  { background: var(--amber-lt);  color: var(--amber); }
+.wt-pm     { background: var(--indigo-lt); color: var(--indigo); }
+.wt-rest   { background: var(--slate-lt);  color: var(--slate); }
+
+.wlegend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+.wleg { display: flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--muted); }
+.wleg-dot { width: 9px; height: 9px; border-radius: 3px; }
+.wleg-dot.am     { background: var(--sage); }
+.wleg-dot.purple { background: var(--purple); }
+.wleg-dot.amber  { background: var(--amber); }
+.wleg-dot.pm     { background: var(--indigo); }
+.wleg-dot.rest   { background: var(--slate); }
+
+/* ── PRODUCTS ── */
+.pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.pcard { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 15px 16px; transition: border-color .15s, transform .12s; }
+.pcard:hover { border-color: var(--line2); transform: translateY(-1px); }
+.pcard-amber  { border-color: var(--amber-brd);  background: var(--amber-lt); }
+.pcard-amber  .pcat { color: var(--amber); }
+.pcard-rose   { border-color: var(--rose-brd);   background: var(--rose-lt); }
+.pcard-rose   .pcat { color: var(--rose); }
+.pcard-purple { border-color: var(--purple-brd); background: var(--purple-lt); }
+.pcard-purple .pcat { color: var(--purple); }
+
+.pcat { font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px; }
+.pname { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 3px; line-height: 1.25; }
+.pbrand { font-size: 11.5px; color: var(--faint); margin-bottom: 5px; }
+.putil { font-size: 11.5px; color: var(--muted); line-height: 1.55; border-top: 1px solid var(--line); margin-top: 8px; padding-top: 8px; }
+.putil b { font-weight: 700; color: var(--ink); }
+
+/* ── SECTION LABEL ── */
 .slabel {
   font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint);
   font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
 }
 .slabel::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 
-.steps { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: #fff; margin-bottom: 1.5rem; }
-.steps-header {
-  display: grid; grid-template-columns: 90px 1fr; background: var(--soft);
-  border-bottom: 1px solid var(--line); padding: 9px 16px; gap: 12px;
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .steps-header { grid-template-columns: 32px 1fr; }
+  .steps-header .col-label.utility { display: none; }
+  .step { grid-template-columns: 32px 1fr; }
+  .step-utility { display: none; }
+  .wgrid { grid-template-columns: repeat(4, 1fr); }
 }
-.col-label { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
-.step {
-  display: grid; grid-template-columns: 90px 1fr; align-items: start;
-  padding: 13px 16px; border-bottom: 1px solid var(--line); gap: 12px; transition: background .12s;
-}
-.step:last-child { border-bottom: none; }
-.step:hover { background: var(--soft); }
-.step-time { font-size: 12.5px; font-weight: 700; color: var(--sage); padding-top: 1px; }
-.step-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
-.tag { display:inline-block; padding: 2px 10px; border-radius: var(--pill); font-size: 10px; font-weight: 600; border: 1px solid; }
-.tag-sage   { background: var(--sage-lt);   color: var(--sage);   border-color: var(--sage-brd); }
-.tag-indigo { background: var(--indigo-lt); color: var(--indigo); border-color: var(--indigo-brd); }
-.tag-amber  { background: var(--amber-lt);  color: var(--amber);  border-color: var(--amber-brd); }
-.tag-slate  { background: var(--slate-lt);  color: var(--slate);  border-color: var(--slate-brd); }
-.tag-teal   { background: var(--teal-lt);   color: var(--teal);   border-color: var(--teal-brd); }
-
-.callout {
-  background: var(--soft); border: 1px solid var(--line); border-radius: var(--r);
-  padding: 14px 16px; font-size: 12.5px; color: var(--muted); line-height: 1.65; margin-top: 10px;
-}
-.callout b { color: var(--ink); font-weight: 700; }
-.callout-amber { background: var(--amber-lt); border-color: var(--amber-brd); color: #7a5006; }
-.callout-amber b { color: var(--amber); }
-
-.habit-card {
-  border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px;
-  margin-bottom: 10px; background: #fff;
-}
-.habit-card.optional { opacity: 0.55; }
-.habit-card .htitle { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 10px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-.chip-options { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 7px 14px; border-radius: var(--pill); border: 1.5px solid var(--line);
-  font-size: 12.5px; font-weight: 600; color: var(--muted); cursor: pointer; transition: all .12s;
-  background: #fff; user-select:none;
-}
-.chip.on { background: var(--sage); color: #fff; border-color: var(--sage); }
-.chip:hover:not(.on) { border-color: var(--sage); color: var(--sage); }
-.simple-toggle { display: flex; align-items: center; gap: 12px; cursor: pointer; flex-wrap:wrap; }
-.switch { position: relative; width: 42px; height: 24px; flex-shrink:0; }
-.switch input { opacity: 0; width: 0; height: 0; }
-.slider { position: absolute; inset: 0; background: var(--line2); border-radius: var(--pill); transition: .2s; }
-.slider::before {
-  content: ''; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px;
-  background: #fff; border-radius: 50%; transition: .2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-}
-input:checked + .slider { background: var(--sage); }
-input:checked + .slider::before { transform: translateX(18px); }
-
-.week-strip { display: grid; grid-template-columns: repeat(7,1fr); gap: 6px; margin-top: 1.5rem; }
-.wcell { text-align: center; }
-.wcell .wd { font-size: 10.5px; color: var(--faint); font-weight: 700; margin-bottom: 4px; }
-.wcell .wdate { font-size: 9.5px; color: var(--faint); margin-bottom: 6px; }
-.wdot {
-  width: 28px; height: 28px; border-radius: 50%; margin: 0 auto;
-  background: var(--soft2); border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--faint); font-weight: 700;
-}
-.wdot.done { background: var(--sage); color: #fff; border-color: var(--sage); }
-.wdot.today { border: 2px solid var(--ink); }
-
-.status { font-size: 11.5px; color: var(--sage); min-height: 16px; margin-top: 8px; font-weight: 600; }
 </style>
 </head>
 <body>
 <div class="page">
 
+  <!-- HEADER -->
   <div class="header">
-    <div class="header-badge"><div class="header-badge-dot"></div>Julio — Diciembre 2026 · Santiago, Chile</div>
-    <h1>Sistema <em>Isidora</em></h1>
-    <p class="sub">Horario y hábitos diarios</p>
+    <div class="header-badge"><div class="header-badge-dot"></div>Tratamiento Dermatológico Potenciado · Piel Resistente</div>
+    <h1>Rutina de <em>Control</em><br>& Antimanchas</h1>
+    <div class="header-tags">
+      <span class="htag">Epiduo Gel (Adapaleno + BPO)</span>
+      <span class="htag">Tetralysal Oral</span>
+      <span class="htag">The Ordinary Niacinamide 10%</span>
+      <span class="htag">Base 3 Días a la Semana</span>
+    </div>
   </div>
 
-  <div class="tabs" id="tabs"></div>
-  <div id="panels"></div>
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab on" onclick="showTab('daily',this)">Rutina Diaria</button>
+    <button class="tab" onclick="showTab('weekly',this)">Estructura Semanal</button>
+    <button class="tab" onclick="showTab('products',this)">Mis Productos</button>
+    <button class="tab" onclick="showTab('rules',this)">Reglas y Cuidados</button>
+  </div>
 
-</div>
+  <!-- ══════════════════════════════════════
+       DAILY
+  ══════════════════════════════════════ -->
+  <div class="panel on" id="t-daily">
+    <div class="day-nav">
+      <button class="dbtn on" onclick="showDay('con-base',this)">Lunes, Miércoles y Viernes (Con Base)</button>
+      <button class="dbtn" onclick="showDay('sin-base',this)">Martes, Jueves, Sáb y Dom (Sin Base)</button>
+    </div>
+
+    <!-- ── OPCIÓN A: LUNES, MIÉRCOLES Y VIERNES (CON BASE) ── -->
+    <div class="dcontent on" id="d-con-base">
+      <div class="session">
+        <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Limpieza · Niacinamida 10% · Effaclar H · Protector Solar · Base Double Wear</span></div>
+        <div class="steps">
+          <div class="steps-header">
+            <div></div>
+            <div class="col-label">Paso / Producto</div>
+            <div class="col-label utility">Objetivo principal</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">1</div>
+            <div class="step-main">
+              <div class="sname">Limpieza Suave</div>
+              <div class="sprod">Limpiador Syndet (ej. Effaclar H Cleanser / Cetaphil)</div>
+              <div class="snote">Lavar cara con agua tibia o fresca. Secar suavemente a toques.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Higiene limpia</em>Elimina el sebo nocturno sin causar tirantez inicial.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">2</div>
+            <div class="step-main">
+              <div class="sname">Sérum Antimanchas & Sebo</div>
+              <div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div>
+              <div class="snote"><strong>2 a 3 gotas max.</strong> Distribuir uniformemente. Dejar secar 1 minuto.</div>
+              <div class="tags"><span class="tag tag-purple">Control de brillo</span><span class="tag tag-purple">Borra marcas PIE/PIH</span></div>
+            </div>
+            <div class="step-utility util-purple"><em>Despigmentante Matutino</em>Regula el brillo de la piel, achica la apariencia de poros y apaga marcas rojas.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">3</div>
+            <div class="step-main">
+              <div class="sname">Crema Reparadora de Barrera</div>
+              <div class="sprod">La Roche-Posay Effaclar H Iso-Biome</div>
+              <div class="snote">Aplica sobre todo el rostro para contrarrestar la resequedad del Epiduo.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Sellador de Humedad</em>Compensa la pérdida de agua producida por el tratamiento médico nocturno.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">4</div>
+            <div class="step-main">
+              <div class="sname">Protector Solar Obligatorio</div>
+              <div class="sprod">Anthelios UVMune 400 Oil Control SPF 50+</div>
+              <div class="snote">Aplicar generosamente. Dejar asentar 3 minutos antes del maquillaje.</div>
+              <div class="tags"><span class="tag tag-amber">FPS 50+ Toque Seco</span></div>
+            </div>
+            <div class="step-utility util-amber"><em>Protección UV Máxima</em>Evita que la radiación fije las manchas y previene la hiperpigmentación.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">5</div>
+            <div class="step-main">
+              <div class="sname">Maquillaje Cobertura Total</div>
+              <div class="sprod">Estée Lauder Double Wear Stay-in-Place</div>
+              <div class="snote">Aplicar a toques con esponja húmeda. Excelente fijación sobre el solar.</div>
+              <div class="tags"><span class="tag tag-amber">Días de Maquillaje</span><span class="tag tag-amber">Oil-Free</span></div>
+            </div>
+            <div class="step-utility util-sage"><em>Camuflaje perfecto</em>Cubre el 100% de rojeces sin obstruir el poro ni generar brotes nuevos.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="session">
+        <div class="sess-head"><span class="spill spill-pm">PM — Noche</span><span class="ssub">Doble Limpieza Completa · Effaclar H · Epiduo Gel</span></div>
+        <div class="steps">
+          <div class="steps-header">
+            <div></div>
+            <div class="col-label">Paso / Producto</div>
+            <div class="col-label utility">Objetivo principal</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">1</div>
+            <div class="step-main">
+              <div class="sname">Paso 1: Desmaquillado de precisión</div>
+              <div class="sprod">Agua Micelar sensible (ej. Bioderma Sensibio / LRP)</div>
+              <div class="snote">Disuelve por completo la base Double Wear y la pantalla solar sin frotar.</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Retirado eficaz</em>Evita la acumulación de maquillaje de larga duración en los poros.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">2</div>
+            <div class="step-main">
+              <div class="sname">Paso 2: Limpieza acuosa</div>
+              <div class="sprod">Limpiador suave facial</div>
+              <div class="snote">Lavar la cara para eliminar los restos de micelas y suciedad urbana.</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Piel purificada</em>Limpia y prepara el tejido para el medicamento.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">3</div>
+            <div class="step-main">
+              <div class="sname">Hidratante Previa</div>
+              <div class="sprod">La Roche-Posay Effaclar H Iso-Biome</div>
+              <div class="snote">Aplica sobre cara limpia. <strong>ESPERAR 10 MINUTOS A QUE ABSORBA COMPLETAMENTE.</strong></div>
+            </div>
+            <div class="step-utility util-indigo"><em>Prevención de Xerosis</em>Evita que la piel se pele en exceso durante la noche.</div>
+          </div>
+          <div class="step">
+            <div class="num num-med">4</div>
+            <div class="step-main">
+              <div class="sname">Tratamiento Médico</div>
+              <div class="sprod">EPIDUO GEL (Adapaleno + Peróxido de Benzoilo)</div>
+              <div class="snote">Cantidad del tamaño de <strong>1 grano de arroz</strong> repartido en todo el rostro.</div>
+              <div class="tags"><span class="tag tag-rose">Receta médica</span></div>
+            </div>
+            <div class="step-utility util-rose"><em>Potencia Médica</em>Acción renovadora, comedolítica y antibacteriana profunda.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── OPCIÓN B: MARTES, JUEVES, SÁBADO Y DOMINGO (SIN BASE) ── -->
+    <div class="dcontent" id="d-sin-base">
+      <div class="session">
+        <div class="sess-head"><span class="spill spill-am">AM — Mañana</span><span class="ssub">Piel al natural · Limpieza · Niacinamida 10% · Effaclar H · Protector Solar</span></div>
+        <div class="steps">
+          <div class="steps-header">
+            <div></div>
+            <div class="col-label">Paso / Producto</div>
+            <div class="col-label utility">Objetivo principal</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">1</div>
+            <div class="step-main">
+              <div class="sname">Limpieza Suave</div>
+              <div class="sprod">Limpiador Syndet (ej. Effaclar H Cleanser / Cetaphil)</div>
+              <div class="snote">Lavar la piel con agua tibia o fría. Secar a toques.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Higiene limpia</em>Retira el tratamiento nocturno sin agredir la piel.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">2</div>
+            <div class="step-main">
+              <div class="sname">Sérum Antimanchas & Sebo</div>
+              <div class="sprod">The Ordinary Niacinamide 10% + Zinc 1%</div>
+              <div class="snote"><strong>2 a 3 gotas max.</strong> Aplica en todo el rostro.</div>
+              <div class="tags"><span class="tag tag-purple">Tratamiento de marcas</span></div>
+            </div>
+            <div class="step-utility util-purple"><em>Efecto Matificante</em>Deja la piel libre de brillo y trabaja reduciendo inflamación.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">3</div>
+            <div class="step-main">
+              <div class="sname">Crema Reparadora de Barrera</div>
+              <div class="sprod">La Roche-Posay Effaclar H Iso-Biome</div>
+              <div class="snote">Proporciona confort y flexibilidad a la piel sin aportar grasa.</div>
+            </div>
+            <div class="step-utility util-sage"><em>Hidratación ligera</em>Mantiene la barrera lista contra agresiones externas.</div>
+          </div>
+          <div class="step">
+            <div class="num num-am">4</div>
+            <div class="step-main">
+              <div class="sname">Protector Solar (Paso Final AM)</div>
+              <div class="sprod">Anthelios UVMune 400 Oil Control SPF 50+</div>
+              <div class="snote">Toque seco natural. Al no llevar base encima, reaplicar con mayor facilidad durante el día.</div>
+              <div class="tags"><span class="tag tag-amber">Piel protegida sin maquillaje</span></div>
+            </div>
+            <div class="step-utility util-amber"><em>Escudo Diario</em>Protección máxima directa contra radiación UV y luz azul.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="session">
+        <div class="sess-head"><span class="spill spill-pm">PM — Noche</span><span class="ssub">Limpieza del Protector Solar · Effaclar H · Epiduo Gel</span></div>
+        <div class="steps">
+          <div class="steps-header">
+            <div></div>
+            <div class="col-label">Paso / Producto</div>
+            <div class="col-label utility">Objetivo principal</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">1</div>
+            <div class="step-main">
+              <div class="sname">Paso 1: Agua Micelar (Retira Bloqueador)</div>
+              <div class="sprod">Agua Micelar sensible (ej. Bioderma Sensibio / LRP)</div>
+              <div class="snote">Pasar un disco de algodón suavemente para disolver los filtros solares resistentes al agua.</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Higiene Rápida</em>Remueve el protector solar acumulado durante el día.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">2</div>
+            <div class="step-main">
+              <div class="sname">Paso 2: Limpiador Acuoso</div>
+              <div class="sprod">Limpiador suave facial</div>
+              <div class="snote">Lavar el rostro normalmente con agua para dejar la piel impecable.</div>
+            </div>
+            <div class="step-utility util-indigo"><em>Piel Purificada</em>Base limpia para recibir el medicamento.</div>
+          </div>
+          <div class="step">
+            <div class="num num-pm">3</div>
+            <div class="step-main">
+              <div class="sname">Hidratante Previa</div>
+              <div class="sprod">La Roche-Posay Effaclar H Iso-Biome</div>
+              <div class="snote">Aplica sobre piel seca. <strong>Esperar 10 minutos a que absorba.</strong></div>
+            </div>
+            <div class="step-utility util-indigo"><em>Cojín Protector</em>Protege contra la sequedad nocturna.</div>
+          </div>
+          <div class="step">
+            <div class="num num-med">4</div>
+            <div class="step-main">
+              <div class="sname">Tratamiento Médico</div>
+              <div class="sprod">EPIDUO GEL (Adapaleno + Peróxido de Benzoilo)</div>
+              <div class="snote">Cantidad del tamaño de <strong>1 grano de arroz</strong> para toda la cara.</div>
+              <div class="tags"><span class="tag tag-rose">Receta médica</span></div>
+            </div>
+            <div class="step-utility util-rose"><em>Renovación Nocturna</em>Continúa el tratamiento de fondo contra el acné.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /t-daily -->
+
+  <!-- ══════════════════════════════════════
+       WEEKLY
+  ══════════════════════════════════════ -->
+  <div class="panel" id="t-weekly">
+    <div class="slabel">Distribución Semanal de Maquillaje y Tratamiento</div>
+    <div class="wgrid">
+      <div class="wday">
+        <div class="wdh">LUN</div>
+        <div class="wdb">
+          <div class="wt wt-purple">Niacinamida</div>
+          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-amber">Base Double Wear</div>
+          <div class="wt wt-pm">Doble Limp.</div>
+          <div class="wt wt-pm">EPIDUO</div>
+        </div>
+      </div>
+      <div class="wday">
+        <div class="wdh">MAR</div>
+        <div class="wdb">
+          <div class="wt wt-purple">Niacinamida</div>
+          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-rest">Sin Base</div>
+          <div class="wt wt-pm">Doble Limp.</div>
+          <div class="wt wt-pm">EPIDUO</div>
+        </div>
+      </div>
+      <div class="wday">
+        <div class="wdh">MIÉ</div>
+        <div class="wdb">
+          <div class="wt wt-purple">Niacinamida</div>
+          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-amber">Base Double Wear</div>
+          <div class="wt wt-pm">Doble Limp.</div>
+          <div class="wt wt-pm">EPIDUO</div>
+        </div>
+      </div>
+      <div class="wday">
+        <div class="wdh">JUE</div>
+        <div class="wdb">
+          <div class="wt wt-purple">Niacinamida</div>
+          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-rest">Sin Base</div>
+          <div class="wt wt-pm">Doble Limp.</div>
+          <div class="wt wt-pm">EPIDUO</div>
+        </div>
+      </div>
+      <div class="wday">
+        <div class="wdh">VIE</div>
+        <div class="wdb">
+          <div class="wt wt-purple">Niacinamida</div>
+          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-amber">Base Double Wear</div>
+          <div class="wt wt-pm">Doble Limp.</div>
+          <div class="wt wt-pm">EPIDUO</div>
+        </div>
+      </div>
+      <div class="wday">
+        <div class="wdh">SÁB</div>
+        <div class="wdb">
+          <div class="wt wt-purple">Niacinamida</div>
+          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-rest">Sin Base</div>
+          <div class="wt wt-pm">Doble Limp.</div>
+          <div class="wt wt-rest">SOS Cicaplast*</div>
+        </div>
+      </div>
+      <div class="wday">
+        <div class="wdh">DOM</div>
+        <div class="wdb">
+          <div class="wt wt-purple">Niacinamida</div>
+          <div class="wt wt-am">Effaclar + SPF</div>
+          <div class="wt wt-rest">Sin Base</div>
+          <div class="wt wt-pm">Doble Limp.</div>
+          <div class="wt wt-pm">EPIDUO</div>
+        </div>
+      </div>
+    </div>
+    <div class="wlegend">
+      <div class="wleg"><div class="wleg-dot purple"></div>Niacinamida 10% (Diario AM)</div>
+      <div class="wleg"><div class="wleg-dot amber"></div>Días de Base (Lun, Mié, Vie)</div>
+      <div class="wleg"><div class="wleg-dot rest"></div>Días Sin Base (Mar, Jue, Sáb, Dom)</div>
+      <div class="wleg"><div class="wleg-dot pm"></div>Epiduo Gel (PM)</div>
+    </div>
+    <div class="callout callout-sage" style="margin-top:16px">
+      <b>Medicamento Oral:</b> Recuerda tomar tu cápsula de <b>Tetralysal</b> todos los días con el desayuno o almuerzo.
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PRODUCTS
+  ══════════════════════════════════════ -->
+  <div class="panel" id="t-products">
+    <div class="slabel">Inventario Activo de Productos</div>
+    <div class="pgrid">
+      <div class="pcard pcard-purple"><div class="pcat">Sérum Antimanchas — Mañana</div><div class="pname">Niacinamide 10% + Zinc 1%</div><div class="pbrand">The Ordinary · 30 ml</div><div class="putil"><b>Para qué:</b> Excelente seborregulador y unificador del tono. Al aplicarlo de mañana en tu piel resistente, acelera el borrado de marcas rojas sin interferir con el Epiduo.</div></div>
+      <div class="pcard pcard-rose"><div class="pcat">Medicamento Tópico — Noche</div><div class="pname">Epiduo Gel</div><div class="pbrand">Adapaleno 0.1% + Peróxido de Benzoilo 2.5%</div><div class="putil"><b>Para qué:</b> El tratamiento central de prescripción médica. Desobstruye poros, elimina la bacteria del acné y renueva activamente la piel.</div></div>
+      <div class="pcard pcard-rose"><div class="pcat">Medicamento Oral — Diario</div><div class="pname">Tetralysal (Limeciclina)</div><div class="pbrand">Antibiótico Recetado</div><div class="putil"><b>Para qué:</b> Controla la carga bacteriana e inflamatoria desde el interior del organismo.</div></div>
+      <div class="pcard"><div class="pcat">Crema Hidratante — AM / PM</div><div class="pname">Effaclar H Iso-Biome</div><div class="pbrand">La Roche-Posay · 40 ml</div><div class="putil"><b>Para qué:</b> Restaura la humedad esencial y repara los lípidos sin engrasar. Ideal para combatir la sequedad del Epiduo.</div></div>
+      <div class="pcard"><div class="pcat">Protector Solar — AM Obligatorio</div><div class="pname">Anthelios UVMune 400 Oil Control</div><div class="pbrand">La Roche-Posay · SPF 50+</div><div class="putil"><b>Para qué:</b> Filtro solar matificante toque seco. Previene la fijación de pigmentos oscuros o cicatrices rojas.</div></div>
+      <div class="pcard pcard-amber"><div class="pcat">Maquillaje Cobertura — Lun, Mié, Vie</div><div class="pname">Double Wear Stay-in-Place</div><div class="pbrand">Estée Lauder · 30 ml</div><div class="putil"><b>Para qué:</b> Cobertura impecable para días específicos. Oil-free y no comedogénica, ideal para usar sobre el solar.</div></div>
+      <div class="pcard"><div class="pcat">Desmaquillante — PM Paso 1</div><div class="pname">Agua Micelar Sensibio / LRP</div><div class="pbrand">Bioderma o La Roche-Posay</div><div class="putil"><b>Para qué:</b> Disuelve maquillaje o protector solar resistente al agua antes del lavado de noche.</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       RULES
+  ══════════════════════════════════════ -->
+  <div class="panel" id="t-rules">
+    <div class="slabel">Reglas Dermatológicas de Optimización</div>
+    <div class="callout callout-sage"><b>Beneficio de alternar días sin base:</b><br>Darle 4 días a la semana de descanso de maquillaje a tu piel le permite respirar mejor, oxigenar los poros y acelerar el proceso de renovación del Epiduo.</div>
+    <div class="callout"><b>Retirado de Bloqueador en días sin base:</b> Aunque no uses la base Double Wear los martes, jueves, sábados y domingos, **el protector solar Anthelios UVMune también requiere agua micelar por la noche** para remover por completo los filtros resistentes al agua.</div>
+    <div class="callout"><b>Uso correcto de The Ordinary Niacinamide:</b> Usa solo 2 a 3 gotas. Te mantendrá el rostro matificado todo el día, tanto los días que usas maquillaje como los días al natural.</div>
+    <div class="alert"><b>¡MANTÉN LOS ÁCIDOS EXFOLIANTES Y OTROS RETINOLES FUERA!</b><br>Aunque tu piel no se irrite, la combinación de Epiduo nocturno + Niacinamida matutina ya le da a tu piel toda la fuerza necesaria sin necesidad de agregar exfoliantes químicos extras.</div>
+  </div>
+
+</div><!-- /page -->
 
 <script>
-function todayStr(d){
-  d = d || new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth()+1).padStart(2,'0');
-  const day = String(d.getDate()).padStart(2,'0');
-  return `${y}-${m}-${day}`;
-}
-function dateFromStr(s){ const [y,m,d]=s.split('-').map(Number); return new Date(y,m-1,d); }
-function weekdayOf(s){ return dateFromStr(s).getDay(); }
-
-const STORAGE_KEY = 'isidora-sistema-2026';
-function loadData(){
-  try{ const raw = localStorage.getItem(STORAGE_KEY); if(raw) return JSON.parse(raw); }catch(e){}
-  return { habitos: {} };
-}
-let data = loadData();
-function saveData(){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }catch(e){} }
-
-const TABS = [ {id:'habitos', label:'Hábitos'}, {id:'horario', label:'Horario'} ];
-
-function renderTabs(){
-  const nav = document.getElementById('tabs');
-  nav.innerHTML = '';
-  TABS.forEach((t,i)=>{
-    const b = document.createElement('button');
-    b.className='tab'+(i===0?' on':'');
-    b.textContent = t.label;
-    b.onclick = ()=> switchTab(t.id);
-    nav.appendChild(b);
-  });
-}
-function switchTab(id){
-  document.querySelectorAll('.tab').forEach((b,i)=> b.classList.toggle('on', TABS[i].id===id));
-  document.querySelectorAll('.panel').forEach(p=> p.classList.toggle('on', p.id==='panel-'+id));
-}
-function renderPanels(){
-  document.getElementById('panels').innerHTML = TABS.map(t=>`<div class="panel${t.id==='habitos'?' on':''}" id="panel-${t.id}"></div>`).join('');
-  renderHabitos();
-  renderHorario();
-}
-
-const DEPORTE_OPTIONS = ['Prep. Física','Halterofilia','Nike Run Club','Caminar','Padel','Cerro','Otro'];
-const HABITOS_DEF = [
-  {id:'deporte', label:'Deporte', type:'multi', options:DEPORTE_OPTIONS, dias:'all'},
-  {id:'temporizador', label:'Temporizador 30 min sin celular', type:'check', dias:'all'},
-  {id:'agua', label:'Agua antes de la bebida', type:'check', dias:'all'},
-  {id:'cama', label:'Hacer la cama', type:'check', dias:'all'},
-  {id:'mindfulness', label:'Mindfulness', type:'check', dias:[1,3,5]},
-  {id:'ingles', label:'Inglés (ELSA Speak)', type:'check', dias:[1,2,3,4]},
-];
-function isObligatorio(h, wd){ return h.dias==='all' ? true : h.dias.includes(wd); }
-function habitCompleted(entry, def){
-  if(!entry) return false;
-  if(def.type==='multi') return Array.isArray(entry[def.id]) && entry[def.id].length>0;
-  return !!entry[def.id];
-}
-function dayFullyCompleted(dateStr){
-  const wd = weekdayOf(dateStr);
-  const entry = data.habitos[dateStr];
-  return HABITOS_DEF.every(h=> !isObligatorio(h,wd) || habitCompleted(entry,h));
-}
-function computeStreak(){
-  let streak = 0;
-  let d = new Date();
-  for(let i=0;i<3650;i++){
-    const ds = todayStr(d);
-    const wd = d.getDay();
-    const hasReq = HABITOS_DEF.some(h=>isObligatorio(h,wd));
-    if(hasReq){
-      if(dayFullyCompleted(ds)){ streak++; }
-      else if(ds===todayStr() && !data.habitos[ds]){ /* hoy sin datos, no rompe */ }
-      else { break; }
-    }
-    d.setDate(d.getDate()-1);
-  }
-  return streak;
-}
-function computeWeekPercentage(){
-  const now = new Date();
-  const wd = now.getDay();
-  const diffToMonday = (wd===0? -6 : 1-wd);
-  const monday = new Date(now); monday.setDate(now.getDate()+diffToMonday);
-  let req=0, done=0;
-  for(let i=0;i<7;i++){
-    const d = new Date(monday); d.setDate(monday.getDate()+i);
-    if(d > now) continue;
-    const ds = todayStr(d), wdi = d.getDay();
-    HABITOS_DEF.forEach(h=>{
-      if(isObligatorio(h,wdi)){ req++; if(habitCompleted(data.habitos[ds],h)) done++; }
-    });
-  }
-  return req===0?0:Math.round((done/req)*100);
-}
-
-let currentDate = todayStr();
-
-function renderHabitos(){
-  const p = document.getElementById('panel-habitos');
-  const wd = weekdayOf(currentDate);
-  const entry = data.habitos[currentDate] || {};
-  const streak = computeStreak();
-  const pct = computeWeekPercentage();
-  const dayLabel = dateFromStr(currentDate).toLocaleDateString('es-CL',{weekday:'long', day:'numeric', month:'long'});
-
-  p.innerHTML = `
-    <div class="stats-row">
-      <div class="stat-card"><div class="num">🔥 ${streak}</div><div class="label">RACHA DE DÍAS</div></div>
-      <div class="stat-card"><div class="num">${pct}%</div><div class="label">CUMPLIMIENTO ESTA SEMANA</div></div>
-    </div>
-    <div class="slabel">${dayLabel}</div>
-    <div id="habit-list"></div>
-    <div class="status" id="habit-status"></div>
-    <div class="slabel" style="margin-top:1.6rem">Últimos 7 días</div>
-    <div class="week-strip" id="week-strip"></div>
-    <div style="margin-top:1.4rem;">
-      <button class="dbtn" id="prev-day">← Día anterior</button>
-      <button class="dbtn" id="next-day" style="margin-left:6px;">Día siguiente →</button>
-      <button class="dbtn" id="today-day" style="margin-left:6px;">Hoy</button>
-    </div>
-  `;
-
-  const list = document.getElementById('habit-list');
-  HABITOS_DEF.forEach(h=>{
-    const obligatorio = isObligatorio(h, wd);
-    const card = document.createElement('div');
-    card.className = 'habit-card' + (obligatorio?'':' optional');
-    if(h.type==='multi'){
-      const selected = entry[h.id] || [];
-      card.innerHTML = `<div class="htitle">${h.label} ${obligatorio?'':'<span class="tag tag-slate">Opcional hoy</span>'}</div>
-        <div class="chip-options">${h.options.map(opt=>`<div class="chip ${selected.includes(opt)?'on':''}" data-h="${h.id}" data-opt="${opt}">${opt}</div>`).join('')}</div>`;
-    } else {
-      const checked = !!entry[h.id];
-      card.innerHTML = `<label class="simple-toggle">
-        <div class="switch"><input type="checkbox" data-h="${h.id}" ${checked?'checked':''}><span class="slider"></span></div>
-        <span>${h.label}</span> ${obligatorio?'':'<span class="tag tag-slate">Opcional hoy</span>'}
-      </label>`;
-    }
-    list.appendChild(card);
-  });
-
-  list.querySelectorAll('.chip').forEach(chip=>{
-    chip.addEventListener('click', ()=>{
-      if(!data.habitos[currentDate]) data.habitos[currentDate] = {};
-      const hid = chip.dataset.h, opt = chip.dataset.opt;
-      let arr = data.habitos[currentDate][hid] || [];
-      if(arr.includes(opt)) arr = arr.filter(o=>o!==opt);
-      else arr.push(opt);
-      data.habitos[currentDate][hid] = arr;
-      saveData(); flash('habit-status'); renderHabitos();
-    });
-  });
-  list.querySelectorAll('input[type=checkbox]').forEach(cb=>{
-    cb.addEventListener('change', ()=>{
-      if(!data.habitos[currentDate]) data.habitos[currentDate] = {};
-      data.habitos[currentDate][cb.dataset.h] = cb.checked;
-      saveData(); flash('habit-status'); renderHabitos();
-    });
-  });
-
-  document.getElementById('prev-day').onclick = ()=>{
-    const d = dateFromStr(currentDate); d.setDate(d.getDate()-1);
-    currentDate = todayStr(d); renderHabitos();
-  };
-  document.getElementById('next-day').onclick = ()=>{
-    const d = dateFromStr(currentDate); d.setDate(d.getDate()+1);
-    currentDate = todayStr(d); renderHabitos();
-  };
-  document.getElementById('today-day').onclick = ()=>{
-    currentDate = todayStr(); renderHabitos();
-  };
-
-  const ws = document.getElementById('week-strip');
-  const dayLetters = ['D','L','M','X','J','V','S'];
-  for(let i=6;i>=0;i--){
-    const d = new Date(); d.setDate(d.getDate()-i);
-    const ds = todayStr(d), wdi = d.getDay();
-    const hasReq = HABITOS_DEF.some(h=>isObligatorio(h,wdi));
-    const done = hasReq ? dayFullyCompleted(ds) : null;
-    const isToday = ds===todayStr();
-    const cell = document.createElement('div');
-    cell.className='wcell';
-    cell.innerHTML = `<div class="wd">${dayLetters[wdi]}</div><div class="wdate">${d.getDate()}</div><div class="wdot ${done?'done':''} ${isToday?'today':''}">${done===null?'–':(done?'✓':'')}</div>`;
-    ws.appendChild(cell);
-  }
-}
-function flash(id){
-  const el = document.getElementById(id);
-  if(!el) return;
-  el.textContent = '✓ Guardado';
-  setTimeout(()=>{ if(el.textContent==='✓ Guardado') el.textContent=''; }, 1400);
-}
-
-const HORARIO = {
-  lun: {label:'Lunes', items:[
-    {t:'8:00–8:10', n:'Mindfulness', tag:'sage'},
-    {t:'8:20–9:30', n:'Preparación Física', tag:'sage'},
-    {t:'9:40–10:50', n:'Manejo de Riesgo en Proyectos', tag:'indigo'},
-    {t:'11:00–12:10', n:'Halterofilia', tag:'sage'},
-    {t:'12:20–13:30', n:'Gestión Estratégica de Empresas Mineras', tag:'indigo'},
-    {t:'13:30–14:50', n:'Almuerzo', tag:'slate'},
-    {t:'14:50–16:10', n:'Taller de Ing. Industrial en Construcción', tag:'indigo'},
-  ]},
-  mar: {label:'Martes', items:[
-    {t:'8:00–8:10', n:'Mindfulness (opcional)', tag:'slate'},
-    {t:'Libre', n:'Nike Run Club', tag:'teal'},
-  ]},
-  mie: {label:'Miércoles', items:[
-    {t:'8:00–8:10', n:'Mindfulness', tag:'sage'},
-    {t:'8:20–9:30', n:'Preparación Física', tag:'sage'},
-    {t:'9:40–10:50', n:'Manejo de Riesgo en Proyectos', tag:'indigo'},
-    {t:'11:00–12:10', n:'Halterofilia', tag:'sage'},
-    {t:'12:20–13:30', n:'Gestión Estratégica de Empresas Mineras', tag:'indigo'},
-  ]},
-  jue: {label:'Jueves', items:[
-    {t:'8:00–8:10', n:'Mindfulness (opcional)', tag:'slate'},
-    {t:'Libre', n:'Nike Run Club', tag:'teal'},
-  ]},
-  vie: {label:'Viernes', items:[
-    {t:'8:00–8:10', n:'Mindfulness', tag:'sage'},
-    {t:'8:20–9:30', n:'Preparación Física', tag:'sage'},
-    {t:'9:40–10:50', n:'Taller de Ing. Ind. en Construcción *', tag:'amber'},
-    {t:'11:00–12:10', n:'Halterofilia', tag:'sage'},
-    {t:'13:30–14:50', n:'Almuerzo', tag:'slate'},
-    {t:'14:50–18:40', n:'Evaluación de Proyectos', tag:'indigo'},
-  ]},
-  sab: {label:'Sábado', items:[
-    {t:'Opcional', n:'Mindfulness', tag:'slate'},
-    {t:'Libre', n:'Caminar / Padel / Cerro / Nike Run Club / Otro', tag:'teal'},
-  ]},
-  dom: {label:'Domingo', items:[
-    {t:'Opcional', n:'Mindfulness', tag:'slate'},
-    {t:'Descanso', n:'Sin exigencia de deporte', tag:'slate'},
-  ]},
-};
-const HORARIO_ORDER = ['lun','mar','mie','jue','vie','sab','dom'];
-
-function renderHorario(){
-  const p = document.getElementById('panel-horario');
-  p.innerHTML = `
-    <div class="day-nav" id="horario-daynav"></div>
-    <div id="horario-content"></div>
-    <div class="callout callout-amber" style="margin-top:6px;">
-      <b>Nota:</b> el Taller de Ing. Industrial en Construcción del viernes tiene un tope de horario temporal — pendiente de ajustar en unas semanas.
-    </div>
-  `;
-  const nav = document.getElementById('horario-daynav');
-  HORARIO_ORDER.forEach((key,i)=>{
-    const b = document.createElement('button');
-    b.className='dbtn'+(i===0?' on':'');
-    b.textContent = HORARIO[key].label.slice(0,3);
-    b.onclick = ()=> showHorarioDay(key, b);
-    nav.appendChild(b);
-  });
-  showHorarioDay('lun', nav.children[0]);
-}
-function showHorarioDay(key, btn){
-  document.querySelectorAll('#horario-daynav .dbtn').forEach(b=>b.classList.remove('on'));
+function showTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('on'));
+  document.getElementById('t-' + id).classList.add('on');
   btn.classList.add('on');
-  const day = HORARIO[key];
-  const content = document.getElementById('horario-content');
-  content.innerHTML = `
-    <div class="slabel">${day.label}</div>
-    <div class="steps">
-      <div class="steps-header"><div class="col-label">Hora</div><div class="col-label">Actividad</div></div>
-      ${day.items.map(it=>`
-        <div class="step">
-          <div class="step-time">${it.t}</div>
-          <div><div class="step-name">${it.n}</div></div>
-        </div>
-      `).join('')}
-    </div>
-  `;
 }
-
-renderTabs();
-renderPanels();
+function showDay(id, btn) {
+  document.querySelectorAll('.dcontent').forEach(d => d.classList.remove('on'));
+  document.querySelectorAll('.dbtn').forEach(b => b.classList.remove('on'));
+  document.getElementById('d-' + id).classList.add('on');
+  btn.classList.add('on');
+}
 </script>
 </body>
 </html>
